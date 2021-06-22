@@ -12,11 +12,6 @@ const recipeSchema = new Schema({
     type: String,
     default: "",
   },
-  // Brief Description of recipe
-  description: {
-    type: String,
-    default: "",
-  },
   // Type of meal: Breakfast, Lunch, etc
   category: {
     type: String,
