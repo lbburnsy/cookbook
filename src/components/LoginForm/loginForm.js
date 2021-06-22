@@ -23,7 +23,7 @@ function LoginForm() {
     Log In
   </Button>
   <Form.Group>
-        Dont have an account? <a href="#Sign up">Sign Up</a>
+        Dont have an account? <a href="#Signup">Sign Up</a>
       </Form.Group>
 </Form>
 </div>
