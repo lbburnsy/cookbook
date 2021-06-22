@@ -1,13 +1,16 @@
 import React from "react";
+import Signup from "../../components/Signup/Signup.js"
 
-function Signup(){
+function SignupPage(){
     return(
         <div className="signup">
-            <h1>Signup</h1>
+            <Signup/>
             
 
         </div>
     )
 }
 
-export default Signup;
+export default SignupPage;
+
+// code the component 
