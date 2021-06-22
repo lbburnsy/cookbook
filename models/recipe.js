@@ -36,14 +36,14 @@ const recipeSchema = new Schema({
   ingredients: [String],
   // Directions for the recipe
   directions: [String],
+  // Serving Size
+  servings: {
+    type: Number,
+  },
   // Current date when recipe was posted
   dateAdded: {
     type: Date,
     default: Date.now,
-  },
-  // Serving Size
-  servings: {
-    type: Number,
   },
 });
 
