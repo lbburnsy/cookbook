@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "img": "/assets/pexels-ella-olsson-3026808.jpg",
+        "name": "pizza"
+    },
+    {
+        "id": 2,
+        "img": "/assets/pexels-engin-akyurt-1435903.jpg",
+        "name": "pasta"
+    },
+    {
+        "id": 3,
+        "img": "/assets/pexels-harry-dona-2412950.jpg",
+        "name": "cheese"
+    }
+]
