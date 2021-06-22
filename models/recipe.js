@@ -35,10 +35,7 @@ const recipeSchema = new Schema({
   // Ingredients used in the recipe
   ingredients: [String],
   // Directions for the recipe
-  directions: {
-    type: String,
-    default: "",
-  },
+  directions: [String],
   // Current date when recipe was posted
   dateAdded: {
     type: Date,
