@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
   // Name of recipe
-  title: {
+  name: {
     type: String,
     required: true,
   },
@@ -48,6 +48,10 @@ const recipeSchema = new Schema({
   dateAdded: {
     type: Date,
     default: Date.now,
+  },
+  // Serving Size
+  servings: {
+    type: Number,
   },
 });
 
