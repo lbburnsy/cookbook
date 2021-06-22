@@ -1,56 +1,52 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const cookBookSchema = new Schema({
-  // Name of recipe 
-  title: {
+const recipeSchema = new Schema({
+  // Name of recipe
+  name: {
     type: String,
-    required: true
+    required: true,
   },
   // url string for thumbnail image
   image: {
     type: String,
-    default: ""
-  },
-  // Brief Description of recipe
-  description: {
-    type: String, 
-    default: ""
+    default: "",
   },
   // Type of meal: Breakfast, Lunch, etc
   category: {
     type: String,
-    default: ""
+    default: "",
   },
   // Italian, Chinese, etc
   cuisine: {
     type: String,
-    default: ""
+    default: "",
   },
   // Time to prepare the recipe
   prep: {
     type: String,
-    default: ""
+    default: "",
   },
   // Time to cook the recipe
   cook: {
     type: String,
-    default: ""
+    default: "",
   },
   // Ingredients used in the recipe
   ingredients: [String],
   // Directions for the recipe
-  directions: {
-    type: String,
-    default: ""
+  directions: [String],
+  // Serving Size
+  servings: {
+    type: Number,
   },
   // Current date when recipe was posted
   dateAdded: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-const Cookbook = mongoose.model("Cookbook", cookBookSchema);
+const Recipes = mongoose.model("Recipes", recipeSchema);
 
-module.exports = Cookbook;
+module.exports = Recipes;
