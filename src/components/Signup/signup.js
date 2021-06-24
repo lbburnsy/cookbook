@@ -17,6 +17,10 @@ function Signup() {
       We'll never share your email with anyone else.
     </Form.Text>
   </Form.Group>
+  <Form.Group controlId="formBasicUsername">
+    <Form.Label>Username</Form.Label>
+    <Form.Control type="Username" placeholder="Enter Username" />
+  </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
