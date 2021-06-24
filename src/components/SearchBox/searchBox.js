@@ -1,10 +1,18 @@
 import React from "react";
+import Form from 'react-bootstrap/Form';
+
+import './searchBox.css'
 
 function SearchBox(){
     return(
         <div className="searchbox">
-            <h1>Search Box</h1>
-            
+
+            <Form>
+            <Form.Control type="text" placeholder="Normal text" />
+            <Form.Text className="text-muted">
+            Search
+            </Form.Text>
+            </Form>
 
         </div>
     )

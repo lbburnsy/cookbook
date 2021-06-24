@@ -32,9 +32,9 @@ function RecipeCards() {
 
         return(
 
-                    <div className="col-lg-3 col-md-3 col-sm-12">
-                        <div className="card receipe-card-noborder" key={index}>
-                            <img src={ card.img } className="card-img-top receipt-card-border" alt={ card.name }></img>
+                    <div className="col-lg-3 col-md-3 col-sm-12 recipeCard">
+                        <div className="card recipe-card-noborder" key={index}>
+                            <img src={ card.img } className="card-img-top recipe-card-border" alt={ card.name }></img>
                             
                         </div>
                         <div className="card-body">

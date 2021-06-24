@@ -5,6 +5,7 @@ import Home from "./pages/Home/home";
 import Recipes from "./pages/Recipes/recipes";
 import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
+import RecipeSearchResults from './pages/RecipeSearchResults/recipeSearchResults'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/recipes" component= { Recipes }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
+          <Route path="/recipesearchresults" component= { RecipeSearchResults }/>
         </Switch>
       </div>
     </Router>
