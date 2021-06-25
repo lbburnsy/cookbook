@@ -13,3 +13,17 @@
 {
     border-style: none !important;
 }
+
+.recipeCards .recipes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+
+.searchResultPage .recipeCard {
+   width: 50%;
+   max-width: 50%;
+   flex: 0 1 auto;
+
+}
