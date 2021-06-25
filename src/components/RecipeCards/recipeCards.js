@@ -1,63 +1,55 @@
-import React from "react";
-import "./recipeCards.css";
+import React, { useEffect, useState } from "react";
+import CardList from "../CardList/cardList";
+import API from "../../utils/API"
+
 
 function RecipeCards() {
+    const [receipes, setReceipes] = useState([])
+    useEffect(()=>
+    {
+        loadReceipes();
+        
 
-    const recipes = [
-        {
-            img: "/assets/pexels-ella-olsson-3026808.jpg",
-            name: "pizza"
+    },[]);
+    function loadReceipes() {
+        API.getRecipes()
+          .then(res => 
+            setReceipes(res.data)
+          )
+          .catch(err => console.log(err));
+      };
+   
+    // const recipes = [
+    //     {
+    //         img: "/assets/pexels-ella-olsson-3026808.jpg",
+    //         name: "pizza"
             
-        },
-        {
-            img: "/assets/pexels-engin-akyurt-1435903.jpg",
-            name: "pasta"
+    //     },
+    //     {
+    //         img: "/assets/pexels-engin-akyurt-1435903.jpg",
+    //         name: "pasta"
            
-        },
-        {
-            img: "/assets/pexels-harry-dona-2412950.jpg",
-            name: "cheese"
+    //     },
+    //     {
+    //         img: "/assets/pexels-harry-dona-2412950.jpg",
+    //         name: "cheese"
             
-        },
-        {
-            img: "/assets/pexels-ben-1464601.jpg",
-            name: "Salad"
+    //     },
+    //     {
+    //         img: "/assets/pexels-ben-1464601.jpg",
+    //         name: "Salad"
             
-        }
+    //     }
 
         
-    ]
+    // ]
 
-    const renderCard = (card, index) => {
-
-        return(
-
-                    <div className="col-lg-3 col-md-3 col-sm-12">
-                        <div className="card receipe-card-noborder" key={index}>
-                            <img src={ card.img } className="card-img-top receipt-card-border" alt={ card.name }></img>
-                            
-                        </div>
-                        <div className="card-body">
-                                <a href="#"><h5 className="card-title">{ card.name }</h5></a>
-                        </div>
-                    </div>
-    
-        )
-
-    }
+    const heading="Receipes";
 
     return (
-        <div className="recipeCards mt-5">
-             <h2 className="text-center title">Featured</h2>
-               
-            <div className="container">
-                    <div className="row my-5 recipes">
-                      
-                        {recipes.map(renderCard)}
-                  
-                    </div>
-            </div>
-        </div>
+        
+         <CardList results={receipes} title={heading}/>
+        
 
     );
    
