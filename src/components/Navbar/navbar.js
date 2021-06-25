@@ -38,6 +38,11 @@ function Navbar(){
                     <span className="nav-link active" href="#">Login</span>
                     </li>
                     </Link>
+                    <Link to="/profile">
+                    <li className="nav-item">
+                    <span className="nav-link active" href="#">Profile</span>
+                    </li>
+                    </Link>
                     <Link to="/recipesearchresults">
                     <li className="nav-item">
                     <span className="nav-link active" aria-current="page" href="#">Recipe Search Results</span>
