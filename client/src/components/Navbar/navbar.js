@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import SearchBox from "../../components/SearchBox/searchBox"
 function Navbar(){
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -53,7 +53,7 @@ function Navbar(){
                     <span className="nav-link active" aria-current="page" href="#">Recipe Details Page</span>
                     </li>
                     </Link>
-
+                    
                     {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
@@ -73,6 +73,7 @@ function Navbar(){
                     <input className="form-control me-2" type="search" placeholder="Recipe search" aria-label="Search" />
                     <button className="btn btn-outline-light" type="submit">Search</button>
                 </form>
+                {/* <SearchBox/> */}
                 </div>
             </div>
         </nav>

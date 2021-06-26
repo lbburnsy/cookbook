@@ -8,10 +8,10 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 function RecipeSearchResults() {
   return (
-    <div className="signup searchResultPage">
+    <div className="searchResultPage">
        <h1>Recipe Search Result Page</h1>
       <br />
-      <SearchBox className="searchBox" onSearch={} onText={}/>
+      {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
 
       <Filter className="filterComponent" />
 
