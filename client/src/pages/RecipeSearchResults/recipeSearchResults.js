@@ -4,13 +4,14 @@ import Filter from "../../components/Filter/filter";
 import SearchBox from "../../components/SearchBox/searchBox";
 
 import "./recipeSearchResults.css";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function RecipeSearchResults() {
   return (
     <div className="signup searchResultPage">
        <h1>Recipe Search Result Page</h1>
       <br />
-      <SearchBox className="searchBox" />
+      <SearchBox className="searchBox" onSearch={} onText={}/>
 
       <Filter className="filterComponent" />
 
