@@ -19,7 +19,7 @@ function Home() {
   return (
     <div className="home">
       <Hero />
-      {recipes.map((recipe) => (
+      {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))}
     </div>
