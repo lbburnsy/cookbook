@@ -1,30 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Sidebar from "../../components/Sidebar/sidebar";
-
-import Home from "../Home/home";
+import ProfileMainNav from "../../components/ProfileMainNav/profileMainNav";
+import ProfileInfo from "../../components/ProfileInfo/profileInfo";
 
 function ProfilePage() {
     return(
         <>
-       
-        <div className="profilePage">
+
+        <div className="container mt-5">
             <div className="row">
-                <div className="col-12 col-lg-4">
-                <Sidebar />
-             
-
-                </div>
-
-                <div className="col-12 col-lg-8">
-                    <h1>Hello World</h1>
-
-                </div>
+            <ProfileInfo />
             </div>
-        
-            
+            <div className="row">
+            <ProfileMainNav />
+            </div>
+            <div className="row">
+                Overview Information
+            </div>
 
         </div>
+       
+  
 
         
 </>
