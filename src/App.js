@@ -5,8 +5,19 @@ import Home from "./pages/Home/home";
 import Recipes from "./pages/Recipes/recipes";
 import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
+import RecipeSearchResults from './pages/RecipeSearchResults/recipeSearchResults';
+import ProfilePage from "./pages/ProfilePage/profilePage"; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import 
+import Cookbook from "./pages/Cookbook/cookbook";
+import Addrecipe from "./pages/Addrecipe/addrecipe";
+import Favorite from "./pages/Favorite/favorite";
+import Basics from "./pages/Basics/basics";
+import Ingredients from "./pages/Ingredients/ingredients";
+import RecipeSteps from "./pages/RecipeSteps/recipesteps";
+import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
+
+
+
 
 function App() {
   return (
@@ -18,6 +29,21 @@ function App() {
           <Route path="/recipes" component= { Recipes }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
+          <Route path="/profile" component= { ProfilePage }/> 
+          <Route path="/recipesearchresults" component= { RecipeSearchResults }/>
+          <Route path="/recipedetailspage" component= { RecipeDetailsPage }/>
+
+
+{/* Sidebar */}
+          <Route path='/cookbook' component={ Cookbook } />
+          <Route path='/addrecipe' component={ Addrecipe} />
+          <Route path='/favorite' component={ Favorite } />
+
+{/* add recipe choices */}
+          <Route path='/basics' component={ Basics } />
+          <Route path='/ingredients' component={ Ingredients } />
+          <Route path='/recipesteps' component={ RecipeSteps } /> 
+
           
         </Switch>
       </div>
