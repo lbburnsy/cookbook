@@ -12,7 +12,7 @@ function Filter() {
     <Card >
     <Card.Body>
       <Form className="filterForm">
-      <Button variant="secondary" size="sm" className="text.center">
+      <Button className= "filterButton" variant="secondary" size="sm" className="text.center">
       Filter Recipe
     </Button>
     <br/>
@@ -29,7 +29,7 @@ function Filter() {
   <Form.Control type="text" placeholder="Meal Type:" />
     </Form.Group>
     </Form>
-    <Button variant="secondary" size="sm">
+    <Button className= "filterButton1" variant="secondary" size="sm">
       Clear
     </Button>
   </Card.Body>
