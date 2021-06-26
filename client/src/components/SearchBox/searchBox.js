@@ -8,10 +8,7 @@ function SearchBox(){
         <div className="searchbox">
 
             <Form>
-            <Form.Control type="text" placeholder="Normal text" />
-            <Form.Text className="text-muted">
-            Search
-            </Form.Text>
+            <Form.Control type="text" placeholder="Search" />
             </Form>
 
         </div>
