@@ -48,6 +48,12 @@ function Navbar(){
                     <span className="nav-link active" aria-current="page" href="#">Recipe Search Results</span>
                     </li>
                     </Link>
+                    <Link to="/recipedetailspage">
+                    <li className="nav-item">
+                    <span className="nav-link active" aria-current="page" href="#">Recipe Details Page</span>
+                    </li>
+                    </Link>
+
                     {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
