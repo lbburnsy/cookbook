@@ -14,6 +14,8 @@ import Favorite from "./pages/Favorite/favorite";
 import Basics from "./pages/Basics/basics";
 import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
+import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
+
 
 
 
@@ -29,6 +31,7 @@ function App() {
           <Route path="/login" component= { Login }/>
           <Route path="/profile" component= { ProfilePage }/> 
           <Route path="/recipesearchresults" component= { RecipeSearchResults }/>
+          <Route path="/recipedetailspage" component= { RecipeDetailsPage }/>
 
 
 {/* Sidebar */}
@@ -40,6 +43,7 @@ function App() {
           <Route path='/basics' component={ Basics } />
           <Route path='/ingredients' component={ Ingredients } />
           <Route path='/recipesteps' component={ RecipeSteps } /> 
+
           
         </Switch>
       </div>
