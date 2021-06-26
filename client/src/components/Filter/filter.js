@@ -12,7 +12,7 @@ function Filter() {
     <Card >
     <Card.Body>
       <Form className="filterForm">
-      <Button className= "filterButton" variant="secondary" size="sm" className="text.center">
+      <Button className= "filterButton" variant="secondary" size="sm">
       Filter Recipe
     </Button>
     <br/>
