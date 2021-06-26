@@ -8,6 +8,7 @@ import "./recipeSearchResults.css";
 function RecipeSearchResults() {
   return (
     <div className="signup searchResultPage">
+       <h1>Recipe Search Result Page</h1>
       <br />
       <SearchBox className="searchBox" />
 
