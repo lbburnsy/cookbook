@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCard from "../../components/FoodCard/FoodCard";
+import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
 import Filter from "../../components/Filter/filter";
 import SearchBox from "../../components/SearchBox/searchBox";
 
@@ -13,7 +13,7 @@ function RecipeSearchResults() {
 
       <Filter className="filterComponent" />
 
-      <FoodCard className="recipeCards" />
+      {/* <FoodCardContainer className="recipeCards" /> */}
     </div>
   );
 }

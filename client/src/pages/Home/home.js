@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../../components/Hero/hero";
-import FoodCard from "../../components/FoodCard/FoodCard";
+import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
 import API from "../../utils/API";
 
 function Home() {
@@ -19,9 +19,10 @@ function Home() {
   return (
     <div className="home">
       <Hero />
-      {recipes.slice(0, 4).map((recipe) => (
+      <FoodCardContainer recipes={recipes} />
+      {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
-      ))}
+      ))} */}
     </div>
   );
 }
