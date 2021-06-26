@@ -1,7 +1,7 @@
 import React from "react";
-import "./recipeCards.css";
+import "./FoodCard.css";
 
-function RecipeCards(props) {
+function FoodCard(props) {
   return (
     <div className="recipeCards mt-5">
       <div className="container">
@@ -26,4 +26,4 @@ function RecipeCards(props) {
   );
 }
 
-export default RecipeCards;
+export default FoodCard;
