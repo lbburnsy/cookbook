@@ -1,6 +1,7 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import './filter.css'
 
 
@@ -11,9 +12,10 @@ function Filter() {
     <Card >
     <Card.Body>
       <Form className="filterForm">
-      <Form.Text className="text-muted">
-     Filter Recipe
-    </Form.Text>
+      <Button variant="secondary" size="sm" className="text.center">
+      Filter Recipe
+    </Button>
+    <br/>
     <br/>
   <Form.Group >
     <Form.Control type="text" placeholder="Main Ingredient:" />
@@ -27,6 +29,9 @@ function Filter() {
   <Form.Control type="text" placeholder="Meal Type:" />
     </Form.Group>
     </Form>
+    <Button variant="secondary" size="sm">
+      Clear
+    </Button>
   </Card.Body>
 </Card>
 </div>

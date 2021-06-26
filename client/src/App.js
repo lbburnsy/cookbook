@@ -14,7 +14,6 @@ import Favorite from "./pages/Favorite/favorite";
 import Basics from "./pages/Basics/basics";
 import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
-import RecipeSearchResults from "./pages/RecipeSearchResults/recipeSearchResults"
 import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
 
 

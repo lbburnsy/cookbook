@@ -14,7 +14,7 @@
     border-style: none !important;
 }
 
-.recipeCards .recipes {
+.searchResultPage .recipeCards .recipes {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
