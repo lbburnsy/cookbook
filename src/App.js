@@ -11,6 +11,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cookbook from "./pages/Cookbook/cookbook";
 import Addrecipe from "./pages/Addrecipe/addrecipe";
 import Favorite from "./pages/Favorite/favorite";
+import Basics from "./pages/Basics/basics";
+import Ingredients from "./pages/Ingredients/ingredients";
+import RecipeSteps from "./pages/RecipeSteps/recipesteps";
+
 
 
 function App() {
@@ -28,9 +32,15 @@ function App() {
 
 
 {/* Sidebar */}
-          <Route path='/cookbook' component={Cookbook} />
-          <Route path='/addrecipe' component={Addrecipe} />
-          <Route path='/favorite' component={Favorite} />
+          <Route path='/cookbook' component={ Cookbook } />
+          <Route path='/addrecipe' component={ Addrecipe} />
+          <Route path='/favorite' component={ Favorite } />
+
+{/* add recipe choices */}
+          <Route path='/basics' component={ Basics } />
+          <Route path='/ingredients' component={ Ingredients } />
+          <Route path='/recipesteps' component={ RecipeSteps } /> 
+          
         </Switch>
       </div>
     </Router>
