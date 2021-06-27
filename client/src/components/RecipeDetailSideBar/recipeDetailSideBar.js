@@ -5,12 +5,15 @@ function RecipeDetailSideBar() {
     return(
         <div className="RecipeDetailSideBar">
             <Card style={{ width: '18rem' }}>
-  <ListGroup variant="flush">
-    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-  </ListGroup>
-</Card>
+            <ListGroup variant="flush">
+              <ListGroup.Item>Category:</ListGroup.Item>
+              <ListGroup.Item>Cuisine:</ListGroup.Item>
+              <ListGroup.Item>Prep:</ListGroup.Item>
+              <ListGroup.Item>Cook:</ListGroup.Item>
+              <ListGroup.Item>Serving:</ListGroup.Item>
+              <ListGroup.Item>Date Added:</ListGroup.Item>
+            </ListGroup>
+          </Card>
         </div>
     );
 };
