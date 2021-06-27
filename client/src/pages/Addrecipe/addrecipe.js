@@ -1,7 +1,8 @@
 import React from "react";
 import ProfileMainNav from "../../components/ProfileMainNav/profileMainNav";
 import ProfileInfo from "../../components/ProfileInfo/profileInfo";
-import AddRecipeForm from "../../components/AddRecipeForm/addRecipeForm";
+// import AddRecipeForm from "../../components/AddRecipeForm/addRecipeForm";
+import { AddRecipeForm } from "../../components/AddRecipeForm/addRecipeForm";
 
 
 
