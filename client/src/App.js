@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     loadRecipes();
   }, []);
-
+// this is only called once because it has no dependances 
   function loadRecipes() {
     API.getRecipes()
       .then((res) => {
@@ -60,7 +60,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-
+// setting all of them to the entier data so that we do not get an error
 
   function onSearch(text){
      console.log(text)
@@ -75,7 +75,7 @@ function App() {
     setSearchedRecipes(hits)
     setFilteredRecipes(applyFilter(filter, hits))
     console.log(hits)
-
+// searchedRecipes is only set when the user types in the searchbox so it is the result of filtering the entier data set by what is in search box
   }
   
   const onFilterChange = (e) => {
