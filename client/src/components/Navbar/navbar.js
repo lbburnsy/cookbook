@@ -1,9 +1,10 @@
 import React from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
 import { Link } from "react-router-dom";
 import SearchBox from "../../components/SearchBox/searchBox"
-function Navbar(){
+function Navbar(props){
     return(
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link to="/">
                 <span className="navbar-brand" href="#">Logo</span>
@@ -69,11 +70,12 @@ function Navbar(){
                     <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li> */}
                 </ul>
-                <form className="d-flex">
-                    <input className="form-control me-2" type="search" placeholder="Recipe search" aria-label="Search" />
-                    <button className="btn btn-outline-light" type="submit">Search</button>
-                </form>
-                {/* <SearchBox/> */}
+                
+                <SearchBox onSearch={props.onSearch} onText={props.onText} recipes={props.recipes}/>
+                    {/* <input className="form-control me-2" type="search" placeholder="Recipe search" aria-label="Search" />
+                    <button className="btn btn-outline-light" type="submit">Search</button> */}
+                
+                
                 </div>
             </div>
         </nav>

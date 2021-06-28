@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "./utils/API";
 import "./App.css";
 import Navbar from "./components/Navbar/navbar";
 import Home from "./pages/Home/home";
@@ -7,7 +8,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
 import RecipeSearchResults from './pages/RecipeSearchResults/recipeSearchResults';
 import ProfilePage from "./pages/ProfilePage/profilePage"; 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import Cookbook from "./pages/Cookbook/cookbook";
 import Addrecipe from "./pages/Addrecipe/addrecipe";
 import Favorite from "./pages/Favorite/favorite";
@@ -16,21 +17,88 @@ import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
 import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
 
+const filterItems = (name, value, data) => {
 
+  switch (name) {
+    case "ingredients":
+      return (data.filter(item => value === "" || item[name].some(item1 => item1.toLowerCase().includes(value.toLowerCase()))))
+      break;
+    default:
+      return (data.filter(item => value === "" || item[name]?.toLowerCase()?.includes(value.toLowerCase())))
+    }
+}
 
+const applyFilter = (filter, hits) => {
+  let items = filterItems("ingredients", filter.ingredients, hits);
+  items = filterItems("cuisine", filter.cuisine, items);
+  items = filterItems("category", filter.category, items);
+  return items;
+}
 
 function App() {
+  
+
+  // const history = useHistory();  
+  const [recipes, setRecipes] = useState([]);
+  const [searchedRecipes, setSearchedRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [filter, setFilter] = useState({ingredients: "", cuisine: "", category: ""});
+  // recipe is what saves the original data
+  //searchedRecipes is the data filtered by what the user types in the search bar
+  // filteredRecipes is the searchedRecipes filtered by what the user types in the ingridents cuisine and mealtype 
+
+  useEffect(() => {
+    loadRecipes();
+  }, []);
+
+  function loadRecipes() {
+    API.getRecipes()
+      .then((res) => {
+        setRecipes(res.data)
+        setSearchedRecipes(res.data)
+        setFilteredRecipes(res.data)
+      })
+      .catch((err) => console.log(err));
+  }
+
+
+  function onSearch(text){
+     console.log(text)
+    // setTimeout(() => window.location = "/recipesearchresults", 500)
+    // window.location = "/recipesearchresults";
+    // tryed earlier to change the window location to this ^ but still did not work 
+    // this is where I am stuck I can not figure out how to get the search results to render in recipesearchresults page 
+    // history.push(`/recipesearchresults/?search=${text}`)
+  }
+  
+  function onText(text, hits) {
+    setSearchedRecipes(hits)
+    setFilteredRecipes(applyFilter(filter, hits))
+    console.log(hits)
+
+  }
+  
+  const onFilterChange = (e) => {
+    console.log(e.target.name, e.target.value)
+    const {name, value} =  e.target;
+    const newFilter = {...filter, [name]: value};
+    setFilter(newFilter);
+    setFilteredRecipes(applyFilter(newFilter, searchedRecipes))
+    
+  }
+
   return (
     <Router>
       <div className="app">
-        <Navbar />
+        <Navbar onSearch={onSearch} onText={onText} recipes={recipes}/>
         <Switch>
           <Route path="/" exact component= { Home }/>
           <Route path="/recipes" component= { Recipes }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
           <Route path="/profile" component= { ProfilePage }/> 
-          <Route path="/recipesearchresults" component= { RecipeSearchResults }/>
+          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} />}/>
+          <Route path="/?search" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} />}/>
           <Route path="/recipedetailspage" component= { RecipeDetailsPage }/>
 
 

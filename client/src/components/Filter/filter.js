@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import './filter.css'
 
 
-function Filter() {
+function Filter(props) {
     return (
         <div>
             <br/>
@@ -16,15 +16,15 @@ function Filter() {
     </Form.Text>
     <br/>
   <Form.Group >
-    <Form.Control type="text" placeholder="Main Ingredient:" />
+    <Form.Control name="ingredients" type="text" placeholder="Main Ingredient:" onChange={props.onChange}/>
    </Form.Group>
   <br/>
   <Form.Group>
-    <Form.Control type="text" placeholder="Cuisine Type:" />
+    <Form.Control name="cuisine" type="text" placeholder="Cuisine Type:" onChange={props.onChange}/>
     </Form.Group>
   <br/>
   <Form.Group>
-  <Form.Control type="text" placeholder="Meal Type:" />
+  <Form.Control name="category" type="text" placeholder="Meal Type:" onChange={props.onChange}/>
     </Form.Group>
     </Form>
   </Card.Body>

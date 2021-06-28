@@ -7,8 +7,8 @@ function FoodCardContainer(props) {
     <div className="recipeCards mt-5">
       <div className="container">
         <div className="row my-5 recipes">
-          {props.recipes.map((recipe) => (
-            <FoodCardBody img={recipe.image} name={recipe.name} />
+          {props.recipes.map((recipe, index) => (
+            <FoodCardBody key={index} img={recipe.image} name={recipe.name} />
           ))}
         </div>
       </div>
