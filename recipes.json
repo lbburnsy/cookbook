@@ -1,17 +1,42 @@
 [
-    {
-        "id": 1,
-        "img": "/assets/pexels-ella-olsson-3026808.jpg",
-        "name": "pizza"
-    },
-    {
-        "id": 2,
-        "img": "/assets/pexels-engin-akyurt-1435903.jpg",
-        "name": "pasta"
-    },
-    {
-        "id": 3,
-        "img": "/assets/pexels-harry-dona-2412950.jpg",
-        "name": "cheese"
-    }
+  {
+    "id": 1,
+    "img": "/client/public/assets/breakfast.jpg",
+    "name": "Breakfast"
+  },
+  {
+    "id": 2,
+    "img": "/client/public/assets/lunch.jpg",
+    "name": "Lunch"
+  },
+  {
+    "id": 3,
+    "img": "/client/public/assets/dinner.jpg",
+    "name": "Dinner"
+  },
+  {
+    "id": 4,
+    "img": "/client/public/assets/dessert.jpg",
+    "name": "Dessert"
+  },
+  {
+    "id": 5,
+    "img": "/client/public/assets/snack.jpg",
+    "name": "Snacks"
+  },
+  {
+    "id": 6,
+    "img": "/client/public/assets/appetizer.jpg",
+    "name": "Appetizer"
+  },
+  {
+    "id": 7,
+    "img": "/client/public/assets/soup.jpg",
+    "name": "Soup"
+  },
+  {
+    "id": 8,
+    "img": "/client/public/assets/salad.jpg",
+    "name": "Salad"
+  }
 ]
