@@ -20,13 +20,13 @@ export class RecipeStepsFormSection extends Component {
                 <Form className="form-width mt-5">
     
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Directions</Form.Label>
+                        <Form.Label className="font">Directions</Form.Label>
                         <Form.Control as="textarea" rows={10} />
                     </Form.Group>
-                    <Button variant="primary" type="back" onClick={this.back}>
+                    <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back
                     </Button>
-                    <Button variant="primary" type="continue" onClick={this.continue}>
+                    <Button className="m-2" variant="primary" type="continue" onClick={this.continue}>
                         Continue
                     </Button>
                 </Form>
