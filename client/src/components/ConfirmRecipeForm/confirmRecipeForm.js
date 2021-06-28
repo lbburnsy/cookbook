@@ -15,7 +15,7 @@ export class ConfirmRecipeForm extends Component {
     };
     
     render() {
-        const  { values: { recipeName, category, cusine, cookingTime, ingredients, directions, servings, dateAdded } } = this.props;
+        const  { values: { recipeName, category, cusine, cookingTime, ingredients, directions, servings } } = this.props;
         return(
             <div>
 
@@ -29,19 +29,15 @@ export class ConfirmRecipeForm extends Component {
                         <ListGroup.Item text={ ingredients }>Ingredients</ListGroup.Item>                        <ListGroup.Item text={ recipeName }>Vestibulum at eros</ListGroup.Item>
                         <ListGroup.Item text={ directions }>Directions</ListGroup.Item>
                         <ListGroup.Item text={ servings }>Number of servings</ListGroup.Item>
-                        <ListGroup.Item text={ dateAdded }>Date Added</ListGroup.Item>
                     </ListGroup>
                     <hr />
-                    <p className="mb-0">
-                        Whenever you need to, be sure to use margin utilities to keep things nice
-                        and tidy.
-                    </p>
+                    
                 </Alert>
 
-                <Button variant="primary" type="confirm" onClick={this.continue}>
+                <Button className="m-2" variant="primary" type="confirm" onClick={this.continue}>
                         Confirm
                 </Button>
-                <Button variant="primary" type="back" onClick={this.back}>
+                <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back
                 </Button>
                 
