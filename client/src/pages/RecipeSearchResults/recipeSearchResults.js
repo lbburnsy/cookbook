@@ -4,16 +4,18 @@ import Filter from "../../components/Filter/filter";
 import SearchBox from "../../components/SearchBox/searchBox";
 
 import "./recipeSearchResults.css";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-function RecipeSearchResults() {
+function RecipeSearchResults(props) {
   return (
-    <div className="signup searchResultPage">
+    <div className="searchResultPage">
+       <h1>Recipe Search Result Page</h1>
       <br />
-      <SearchBox className="searchBox" />
+      {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
 
-      <Filter className="filterComponent" />
+      <Filter className="filterComponent" onChange={props.onFilterChange}/>
 
-      {/* <FoodCardContainer className="recipeCards" /> */}
+      <FoodCardContainer className="recipeCards" recipes={props.recipes}/>
     </div>
   );
 }

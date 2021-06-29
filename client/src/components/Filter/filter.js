@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import './filter.css'
 
 
-function Filter() {
+function Filter(props) {
     return (
         <div>
             <br/>
@@ -18,15 +18,15 @@ function Filter() {
     <br/>
     <br/>
   <Form.Group >
-    <Form.Control type="text" placeholder="Main Ingredient:" />
+    <Form.Control name="ingredients" type="text" placeholder="Main Ingredient:" onChange={props.onChange}/>
    </Form.Group>
   <br/>
   <Form.Group>
-    <Form.Control type="text" placeholder="Cuisine Type:" />
+    <Form.Control name="cuisine" type="text" placeholder="Cuisine Type:" onChange={props.onChange}/>
     </Form.Group>
   <br/>
   <Form.Group>
-  <Form.Control type="text" placeholder="Meal Type:" />
+  <Form.Control name="category" type="text" placeholder="Meal Type:" onChange={props.onChange}/>
     </Form.Group>
     </Form>
     <Button className= "filterButton1" variant="secondary" size="sm">
