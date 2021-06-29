@@ -11,7 +11,7 @@ function FoodCardBody(props) {
         ></img>
       </div>
       <div className="card-body">
-        <a href="#">
+        <a href={props.name}>
           <h5 className="card-title">{props.name}</h5>
         </a>
       </div>
