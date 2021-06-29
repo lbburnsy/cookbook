@@ -15,20 +15,23 @@ export class ConfirmRecipeForm extends Component {
     };
     
     render() {
-        const  { values: { recipeName, category, cusine, cookingTime, ingredients, directions, servings } } = this.props;
+        const  { 
+            values: { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings } 
+        } = this.props;
         return(
             <div>
 
                 <Alert variant="success">
                     <Alert.Heading>Confirm Your Recipe!</Alert.Heading>
                     <ListGroup>
-                        <ListGroup.Item text={ recipeName }>Recipe Name</ListGroup.Item>
-                        <ListGroup.Item text={ category }>Category</ListGroup.Item>
-                        <ListGroup.Item text={ cusine }>Cuisine</ListGroup.Item>
-                        <ListGroup.Item text={ cookingTime }>Cooking Time</ListGroup.Item>
-                        <ListGroup.Item text={ ingredients }>Ingredients</ListGroup.Item>                        <ListGroup.Item text={ recipeName }>Vestibulum at eros</ListGroup.Item>
-                        <ListGroup.Item text={ directions }>Directions</ListGroup.Item>
-                        <ListGroup.Item text={ servings }>Number of servings</ListGroup.Item>
+                        <ListGroup.Item text={ recipeName }>Recipe Name: { recipeName }</ListGroup.Item>
+                        <ListGroup.Item text={ category }>Category: { category }</ListGroup.Item>
+                        <ListGroup.Item text={ cuisine }>Cuisine: { cuisine }</ListGroup.Item>
+                        <ListGroup.Item text={ prepTime }>Prep Time: { prepTime }</ListGroup.Item>
+                        <ListGroup.Item text={ cookingTime }>Cooking Time: { cookingTime }</ListGroup.Item>
+                        <ListGroup.Item text={ ingredients }>Ingredients: { ingredients }</ListGroup.Item>
+                        <ListGroup.Item text={ directions }>Directions: { directions }</ListGroup.Item>
+                        <ListGroup.Item text={ servings }>Number of servings: { servings }</ListGroup.Item>
                     </ListGroup>
                     <hr />
                     

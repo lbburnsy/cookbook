@@ -14,14 +14,15 @@ export class RecipeIngredientsFormSection extends Component {
     };
 
     render() {
-        const  { values, handleChange } = this.props;
+        const { values, handleChange } = this.props;
         return(
             <div>
 
 <Form className="form-width">
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label className="font">Ingredients</Form.Label>
-                    <Form.Control as="textarea" rows={10} />
+                    <Form.Control onChange={handleChange('ingredients')}
+                    defaultValue={values.ingredients} as="textarea" rows={10} />
                 </Form.Group>
     
                 <Button className="m-2" variant="primary" type="back" onClick={this.back}>
