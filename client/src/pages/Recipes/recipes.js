@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./recipes.css";
 import API from "../../utils/API";
 import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
+import Header from "../../components/Header/header";
 
 
 
@@ -20,7 +21,7 @@ function Recipes() {
 
   return (
     <div className="recipes">
-      <h1>Recipes Page</h1>
+      <Header title="Recipes"/>
       <FoodCardContainer recipes={recipes} />
     </div>
   );
