@@ -1,5 +1,5 @@
 import React from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
+// import { propTypes } from "react-bootstrap/esm/Image";
 import SearchBar from 'react-js-search';
 import { useHistory } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function SearchBox(props){
 
   //how to set the state based on the text input
   //how to display stuff when the button is clicked
-const onSearch = (text, hits) => {
+  const onSearch = (text, hits) => {
   props.onSearch(text, hits)
   history.push(`/recipesearchresults/`)
  

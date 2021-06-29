@@ -8,14 +8,18 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 function RecipeSearchResults(props) {
   return (
-    <div className="searchResultPage">
+    <div className="container-fluid">
        <h1>Recipe Search Result Page</h1>
       <br />
       {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
-
+      <div className="row">
+<div className="col-12 col-md-4">
       <Filter className="filterComponent" onChange={props.onFilterChange}/>
-
-      <FoodCardContainer className="recipeCards" recipes={props.recipes}/>
+      </div>
+      <div className="col-12 col-md-8">
+      <FoodCardContainer className="recipeCards" recipes={props.recipes} itemColClass={"col-12 col-md-4"}/>
+      </div>
+      </div>
     </div>
   );
 }

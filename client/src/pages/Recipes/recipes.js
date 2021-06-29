@@ -22,7 +22,7 @@ function Recipes() {
   return (
     <div className="recipes">
       <Header title="Recipes"/>
-      <FoodCardContainer recipes={recipes} />
+      <FoodCardContainer recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
     </div>
   );
 }

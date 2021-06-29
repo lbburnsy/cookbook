@@ -4,7 +4,7 @@ import "./FoodCardContainer.css";
 
 function FoodCardBody(props) {
   return (
-    <div className="col-lg-3 col-md-3 col-sm-12">
+    <div className={props.itemColClass}>
       <div className="card recipe-card-noborder">
         <img
           src={props.img}
