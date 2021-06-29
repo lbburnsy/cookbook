@@ -20,12 +20,14 @@ export class RecipeBasicsFormSection extends Component {
     
                     <Form.Group controlId="formBasicName">
                         <Form.Label className="font">Name Your Recipe</Form.Label>
-                        <Form.Control onChange = { handleChange ("recipeName")} defaultValues = {values.recipeName} type="text" placeholder="Recipe name" />
+                        <Form.Control onChange={handleChange('recipeName')} 
+                        defaultValue={values.recipeName} type="text" placeholder="Recipe name" />
                     </Form.Group>
 
                     <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label className="font">Category</Form.Label>
-                        <Form.Control as="select">
+                        <Form.Control onChange={handleChange('category')} 
+                        defaultValue={values.category} as="select">
                         <option>Category</option>
                         <option>Breakfast</option>
                         <option>Lunch</option>
@@ -40,13 +42,15 @@ export class RecipeBasicsFormSection extends Component {
 
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label className="font">Cuisine</Form.Label>
-                    <Form.Control type="text" placeholder="Cuisine Type ex. Italian" />
+                    <Form.Control onChange={handleChange('cuisine')} 
+                        defaultValue={values.cuisine} type="text" placeholder="Cuisine Type ex. Italian" />
 
                 </Form.Group>
 
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label className="font">Number of Servings</Form.Label>
-                            <Form.Control as="select">
+                            <Form.Control onChange={handleChange('servings')} 
+                        defaultValue={values.servings} as="select" >
                             <option>Servings</option>
                             <option>1</option>
                             <option>2</option>
@@ -60,7 +64,8 @@ export class RecipeBasicsFormSection extends Component {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridHours">
                         <Form.Label className="font">Hours</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('prepTime')} 
+                        defaultValue={values.prepTime} as="select" defaultValue="Choose...">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -69,7 +74,8 @@ export class RecipeBasicsFormSection extends Component {
 
                         <Form.Group as={Col} controlId="formGridMinutes">
                         <Form.Label className="font">Minutes</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('prepTime')} 
+                        defaultValue={values.prepTime} as="select" defaultValue="Choose...">
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>
@@ -81,7 +87,8 @@ export class RecipeBasicsFormSection extends Component {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridHours">
                         <Form.Label className="font">Hours</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('cookingTime')} 
+                        defaultValue={values.cookingTime} as="select" defaultValue="Choose...">
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -90,7 +97,8 @@ export class RecipeBasicsFormSection extends Component {
 
                         <Form.Group as={Col} controlId="formGridMinutes">
                         <Form.Label className="font">Minutes</Form.Label>
-                        <Form.Control as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('cookingTime')} 
+                        defaultValue={values.cookingTime} as="select" defaultValue="Choose...">
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>

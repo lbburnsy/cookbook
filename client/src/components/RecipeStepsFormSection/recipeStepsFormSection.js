@@ -21,7 +21,8 @@ export class RecipeStepsFormSection extends Component {
     
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label className="font">Directions</Form.Label>
-                        <Form.Control as="textarea" rows={10} />
+                        <Form.Control onChange={handleChange('directions')}
+                        defaultValue={values.directions} as="textarea" rows={10} />
                     </Form.Group>
                     <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back

@@ -10,12 +10,13 @@ import RecipeStepsFormSection from "../../components/RecipeStepsFormSection/reci
 import ConfirmRecipeForm from "../../components/ConfirmRecipeForm/confirmRecipeForm";
 import SuccessRecipeForm from "../../components/SuccessRecipeForm/successRecipeForm";
 
-export class AddRecipeForm extends Component{
+export class AddRecipeForm extends Component {
     state={
         step: 1,
         recipeName: "",
         category: "",
-        cusine: "",
+        cuisine: "",
+        prepTime: "",
         cookingTime: "",
         ingredients: "",
         directions: "",
@@ -28,7 +29,7 @@ export class AddRecipeForm extends Component{
         this.setState({
             step: step + 1
         });
-    }
+    };
 
     // Go Back to previous step
     previousStep = () => {
@@ -36,29 +37,29 @@ export class AddRecipeForm extends Component{
         this.setState({
             step: step - 1
         });
-    }
+    };
 
     // Handle fields change
     handleChange =  input => event => {
-        this.setState({[input]: event.target.value})
-    }
+        this.setState({ [input]: event.target.value});
+    };
 
 
     render() {
         const { step } = this.state;
-        const { recipeName, category, cusine, cookingTime, ingredients, directions, servings } = this.state;
-        const values = { recipeName, category, cusine, cookingTime, ingredients, directions, servings }
+        const { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings } = this.state;
+        const values = { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings };
        
         switch(step) {
             case 1:
-                return(
+                return (
                     <RecipeBasicsFormSection 
                         nextStep = {this.nextStep}
                         handleChange = {this.handleChange}
                         values = {values} />    
                 )
             case 2:
-                return(
+                return (
                     <RecipeIngredientsFormSection
                         nextStep = {this.nextStep}
                         previousStep = {this.previousStep}
@@ -66,7 +67,7 @@ export class AddRecipeForm extends Component{
                         values = {values} />
                 )
             case 3:
-                return(
+                return (
                     <RecipeStepsFormSection 
                         nextStep = {this.nextStep}
                         previousStep = {this.previousStep}
@@ -74,14 +75,14 @@ export class AddRecipeForm extends Component{
                         values = {values} />
                 )
             case 4:
-                return(
+                return (
                     <ConfirmRecipeForm 
                         nextStep = {this.nextStep}
                         previousStep = {this.previousStep}
                         values = {values}/>
                 )
             case 5:
-                return(
+                return (
                     <SuccessRecipeForm />
                 )
 
