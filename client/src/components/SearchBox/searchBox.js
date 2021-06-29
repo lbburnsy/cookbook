@@ -15,9 +15,10 @@ function SearchBox(props){
 
   //how to set the state based on the text input
   //how to display stuff when the button is clicked
-const onSearch = (text) => {
-  props.onSearch(text)
+const onSearch = (text, hits) => {
+  props.onSearch(text, hits)
   history.push(`/recipesearchresults/`)
+ 
 
 }
   
