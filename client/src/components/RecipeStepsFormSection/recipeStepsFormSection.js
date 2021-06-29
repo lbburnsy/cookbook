@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 export class RecipeStepsFormSection extends Component {

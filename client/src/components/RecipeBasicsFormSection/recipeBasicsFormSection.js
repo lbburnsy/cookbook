@@ -14,7 +14,7 @@ export class RecipeBasicsFormSection extends Component {
         const  { values, handleChange } = this.props;
         return(
             <div>
-                <UploadImage />
+                {/* <UploadImage /> */}
 
                 <Form className="form-width mt-5">
     

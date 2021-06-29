@@ -36,6 +36,8 @@ export class RecipeIngredientsFormSection extends Component {
             </div>
         )
     }
+
+    
 }
 
 export default RecipeIngredientsFormSection;
