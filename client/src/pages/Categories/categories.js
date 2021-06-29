@@ -1,12 +1,14 @@
 import React from "react";
+import Categories from "../../utils/categories.json";
+import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
 
-function Categories() {
-    return(
-        <div className="signup">
-            <h1>Categories</h1>
-        </div>
-
-    )
+function CategoriesPage() {
+  return (
+    <div className="signup">
+      <h1>Categories</h1>
+      <FoodCardContainer recipes={Categories} />
+    </div>
+  );
 }
 
-export default Categories;
+export default CategoriesPage;
