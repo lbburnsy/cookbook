@@ -1,11 +1,12 @@
 import React from "react";
 import Categories from "../../utils/categories.json";
 import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
+import Header from "../../components/Header/header";
 
 function CategoriesPage() {
   return (
     <div className="signup">
-      <h1>Categories</h1>
+      <Header title="Categories"/>
       <FoodCardContainer recipes={Categories} />
     </div>
   );
