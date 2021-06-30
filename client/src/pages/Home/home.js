@@ -3,6 +3,7 @@ import Hero from "../../components/Hero/hero";
 import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
 import API from "../../utils/API";
 import Categories from "../../utils/categories.json";
+import Header from "../../components/Header/header";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -20,11 +21,13 @@ function Home() {
   return (
     <div className="home">
       <Hero />
-      <FoodCardContainer recipes={recipes} />
+      <Header title="Recipes"/>
+      <FoodCardContainer recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
       {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))} */}
-      <FoodCardContainer recipes={Categories} />
+      <Header title="Categories"/>
+      <FoodCardContainer recipes={Categories} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
     </div>
   );
 }

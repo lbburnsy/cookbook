@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./recipes.css";
 import API from "../../utils/API";
 import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
+import Header from "../../components/Header/header";
 
 
 
@@ -20,8 +21,8 @@ function Recipes() {
 
   return (
     <div className="recipes">
-      <h1>Recipes Page</h1>
-      <FoodCardContainer recipes={recipes} />
+      <Header title="Recipes"/>
+      <FoodCardContainer recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
     </div>
   );
 }

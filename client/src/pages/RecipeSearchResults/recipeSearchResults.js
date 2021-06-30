@@ -8,7 +8,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 
 function RecipeSearchResults(props) {
   return (
-    <div className="searchResultPage">
+    <div className="container-fluid">
        <h1>Recipe Search Result Page</h1>
       <br />
       {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}

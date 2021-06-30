@@ -1,8 +1,10 @@
 import React from "react";
+import "./FoodCardContainer.css";
+
 
 function FoodCardBody(props) {
   return (
-    <div className="col-lg-3 col-md-3 col-sm-12 recipeCard">
+    <div className={props.itemColClass}>
       <div className="card recipe-card-noborder">
         <img
           src={props.img}
@@ -11,7 +13,7 @@ function FoodCardBody(props) {
         ></img>
       </div>
       <div className="card-body">
-        <a href="#">
+        <a href={props.name}>
           <h5 className="card-title">{props.name}</h5>
         </a>
       </div>
