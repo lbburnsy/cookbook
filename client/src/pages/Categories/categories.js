@@ -7,7 +7,7 @@ function CategoriesPage() {
   return (
     <div className="signup">
       <Header title="Categories"/>
-      <FoodCardContainer recipes={Categories} />
+      <FoodCardContainer recipes={Categories} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
     </div>
   );
 }
