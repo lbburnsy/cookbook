@@ -23,7 +23,7 @@ function SearchBox(props){
 }
   
     return(
-        <div className="searchbox">
+        <div className="searchbox py-2">
 
            
                 <SearchBar 
