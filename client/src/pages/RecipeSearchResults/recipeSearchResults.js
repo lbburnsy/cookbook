@@ -13,7 +13,7 @@ function RecipeSearchResults(props) {
       <br />
       {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
 
-      <Filter className="filterComponent" onChange={props.onFilterChange}/>
+      <Filter className="filterComponent" onChange={props.onFilterChange} filter={props.filter}/>
 
       <FoodCardContainer className="recipeCards" recipes={props.recipes}/>
     </div>

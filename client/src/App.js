@@ -34,6 +34,7 @@ const applyFilter = (filter, text) => {
   items = filterItems("category", filter.category, items);
   return items;
 }
+const initFilter = {ingredients: "", cuisine: "", category: ""};
 
 function App() {
   
@@ -42,7 +43,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
-  const [filter, setFilter] = useState({ingredients: "", cuisine: "", category: ""});
+  const [filter, setFilter] = useState(initFilter);
   // recipe is what saves the original data
   //searchedRecipes is the data filtered by what the user types in the search bar
   // filteredRecipes is the searchedRecipes filtered by what the user types in the ingridents cuisine and mealtype 
@@ -84,7 +85,15 @@ function App() {
   const onFilterChange = (e) => {
     console.log(e.target.name, e.target.value)
     const {name, value} =  e.target;
-    const newFilter = {...filter, [name]: value};
+    let newFilter = "";
+    switch (name) {
+      case "clearButton":
+        newFilter = initFilter;
+        break;
+      default: 
+       newFilter = {...filter, [name]: value};
+    }
+    
     setFilter(newFilter);
     setFilteredRecipes(applyFilter(newFilter, searchedRecipes))
     
@@ -100,8 +109,7 @@ function App() {
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
           <Route path="/profile" component= { ProfilePage }/> 
-          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} />}/>
-          <Route path="/?search" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} />}/>
+          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} />}/>
           <Route path="/recipedetailspage" component= { RecipeDetailsPage }/>
 
 
