@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageUploading from 'react-images-uploading';
  
-export function UploadImage() {
+function UploadImage() {
   const [images, setImages] = React.useState([]);
   const maxNumber = 69;
  
