@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Ar-Chive
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+A dynamic full stack application designed to serve as a digital cookbook, while allowing discovery of brand new recipes.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+[Description](#Description)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Technologies-&-tools-used](#Technologies-Used)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[User-Story](#User-Story)
 
-### `npm test`
+[License](#License)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Badges](#Badges)
 
-### `npm run build`
+[Contributing](#Contributing)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Contributors](#Contributors)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Future-Development](#Future-Development)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Tests](#Tests)
 
-### `npm run eject`
+[Deployed-Link](#Deployed-Link)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Questions](#Questions)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used:
+1. HTML
+2. Javascript
+3. Bootstrap 5/React Bootstrap
+4. CSS
+5. Node js
+6. Dependencies:
+    * axios
+    * express
+    * if-env
+    * mongoose
+    * react-images-uploading
+    * react-js-search
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## User Story: 
+As a food enthusiast, I want to be able to create a profile and create a cookbook with my personal recipes.I want to be able to discover new recipes to broaden my culinary horizons and when I find new unknown recipes, I want to be able to save them for later if I enjoy them.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
+![APM](https://img.shields.io/apm/l/README)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Badges
 
-### Code Splitting
+![HTML](https://img.shields.io/badge/HTML-blue)
+![javaScript](https://img.shields.io/badge/JavaScript-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-blue)
+![CSS](https://img.shields.io/badge/CSS-blue)
+![Node](https://img.shields.io/badge/Node.js-CLI-blue)
+![express](https://img.shields.io/badge/express-npm%20package-blue)
+![axios](https://img.shields.io/badge/axios-npm%20package-blue)
+![mongoDB](https://img.shields.io/badge/mongoDB-npm%20package-blue)
+![mongoose](https://img.shields.io/badge/mongoose-npm%20package-blue)
+![react-images-uploading](https://img.shields.io/badge/react%20images%20uploading-npm%20package-blue)
+![react-js-search](https://img.shields.io/badge/react%20js%20search-npm%20package-blue)
+![if-env](https://img.shields.io/badge/if%20env-npm%20package-blue)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing 
 
-### Analyzing the Bundle Size
+To contribute to this project, please make sure you follow the guidelines in [The Contributor Covenant](https://www.contributor-covenant.org/) as general guidelines.
+Kindly maintain the highest ethics and respect. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Future Development:
+Functionality to dynamically change ingredients based on serving size.
+Users can comment and otherwise interact with other posts
+User can add recipe ingredients to a shopping list on their profile.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Contributors
+* [Noha Ashraf](https://www.github.com/NohaAshraf85)
+* [Luc Burns](https://www.github.com/lbburnsy)
+* [Brittany Plummer](https://www.github.com/BrittPlum)
+* [Suzanne Radlein](https://www.github.com/srad25)
+* [Erin Seppala](https://www.github.com/aseppala98)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Tests
+The application has been tested on the browser and on multiple devices to test the responsiveness.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Deployed-Link
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Questions
+For any questions, please contact me through [GitHub](https://github.com/lbburnsy) 
+or [Email](mailto:burnsluc@gmail.com)
+
+
+
+
+
+
+
+
+
+
