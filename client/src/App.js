@@ -112,6 +112,7 @@ function App() {
         <Switch>
           <Route path="/" exact component= { Home }/>
           <Route path="/recipes" component= { Recipes }/>
+          <Route path="/categories" component= { CategoriesPage }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
           <Route path="/profile" component= { ProfilePage }/> 
