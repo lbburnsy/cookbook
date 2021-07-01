@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import IngredientsList from "../IngredientsList/ingredientsList";
+
 
 export class RecipeIngredientsFormSection extends Component {
     continue = event => {
@@ -15,26 +17,35 @@ export class RecipeIngredientsFormSection extends Component {
 
     render() {
         const { values, handleChange } = this.props;
+        
         return(
             <div>
 
-<Form className="form-width">
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Label className="font">Ingredients</Form.Label>
-                    <Form.Control onChange={handleChange('ingredients')}
-                    defaultValue={values.ingredients} as="textarea" rows={10} />
-                </Form.Group>
-    
-                <Button className="m-2" variant="primary" type="back" onClick={this.back}>
-                        Go Back
-                </Button>
-                <Button  className="m-2"variant="primary" type="continue" onClick={this.continue}>
-                        Continue
-                </Button>
-            </Form>
+                <IngredientsList handleChange = {handleChange}
+                        values = {values} />
+            
+                <Form className="form-width">
+                   
+        
+                    <Button className="m-2" variant="primary" type="back" onClick={this.back}>
+                            Go Back
+                    </Button>
+                    <Button  className="m-2"variant="primary" type="continue" onClick={this.continue}>
+                            Continue
+                    </Button>
+                </Form>
+
+            
 
             </div>
+
+            
+            
+
+            
         )
+
+        
     }
 
     
