@@ -28,6 +28,7 @@ A dynamic full stack application designed to serve as a digital cookbook, while 
 
 [Questions](#Questions)
 
+
 ## Technologies Used:
 1. HTML
 2. Javascript
@@ -51,7 +52,6 @@ As a food enthusiast, I want to be able to create a profile and create a cookboo
 ![APM](https://img.shields.io/apm/l/README)
 
 ## Badges
-
 ![HTML](https://img.shields.io/badge/HTML-blue)
 ![javaScript](https://img.shields.io/badge/JavaScript-blue)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-blue)
@@ -74,7 +74,6 @@ Kindly maintain the highest ethics and respect.
 Functionality to dynamically change ingredients based on serving size.
 Users can comment and otherwise interact with other posts
 User can add recipe ingredients to a shopping list on their profile.
-
 
 
 ## Contributors
