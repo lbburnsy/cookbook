@@ -4,6 +4,7 @@ import FoodCardContainer from "../../components/FoodCard/FoodCardContainer";
 import API from "../../utils/API";
 import Categories from "../../utils/categories.json";
 import Header from "../../components/Header/header";
+import ShowMoreButton from "../../components/ShowMoreButton/showMoreButton";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -26,8 +27,10 @@ function Home() {
       {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))} */}
+      <ShowMoreButton more="/recipes" />
       <Header title="Categories"/>
       <FoodCardContainer recipes={Categories} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
+      <ShowMoreButton more="/categories" />
     </div>
   );
 }
