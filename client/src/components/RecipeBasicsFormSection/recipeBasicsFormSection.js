@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "./recipeBasicsFormSection.css";
+import UploadImage from "../../components/UploadImage/uploadImage";
 
 export class RecipeBasicsFormSection extends Component {
     continue = event => {
@@ -13,6 +14,8 @@ export class RecipeBasicsFormSection extends Component {
         const  { values, handleChange } = this.props;
         return(
             <div>
+
+                <UploadImage />
 
                 <Form className="form-width mt-5">
     
