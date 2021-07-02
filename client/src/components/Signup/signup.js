@@ -1,64 +1,163 @@
-import React from "react";
+import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-
-
 import "./signup.css"
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 function Signup() {
+    const [state , setState] = useState({
+        email : "",
+        username : "",
+        password : "",
+        confirmPassword: "",
+        successMessage: null
+
+    })
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
+
+    const sendDetailsToServer = () => {
+      if(state.email.length && state.username && state.password.length) {
+          // props.showError(null);
+          const payload={
+              "email":state.email,
+              "username":state.username,
+              "password":state.password,
+          }
+        //   axios.post(API_BASE_URL+'/user/signup', payload)
+        //       .then(function (response) {
+        //           if(response.status === 200){
+        //               setState(prevState => ({
+        //                   ...prevState,
+        //                   'successMessage' : 'Signup successful. Redirecting to home page..'
+        //               }))
+        //               localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
+        //               redirectToHome();
+        //               // props.showError(null)
+        //           } else{
+        //               // props.showError("Some error ocurred"); 
+        //           }
+        //       })
+              .catch(function (error) {
+                  console.log(error);
+              });    
+      } else {
+          // props.showError('Please enter valid email, username, and password')    
+      }
+      
+    }
+
+    const redirectToHome = () => {
+      // props.updateTitle('Home')
+      // props.history.push('/home');
+  }
+
+    
+    const handleSubmitClick = (e) => {
+      e.preventDefault();
+      if(state.password === state.confirmPassword) {
+          sendDetailsToServer()    
+      } else {
+          // props.showError('Passwords do not match');
+      }
+  }
     return(
         <div className="signup">
-<Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-  <Form.Group controlId="formBasicUsername">
-    <Form.Label>Username</Form.Label>
-    <Form.Control type="Username" placeholder="Enter Username" />
-  </Form.Group>
+  <Form>
+      <div className="form-group text-left">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input type="email" 
+              className="form-control" 
+              id="email" 
+              aria-describedby="emailHelp" 
+              placeholder="Enter email"
+              value={state.email}
+              onChange={handleChange}
+          />
+          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
 
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-    <Form.Text className="text-muted">
-     Password must be 8 characters 
-    </Form.Text>
-  </Form.Group>
+      <div className="form-group text-left">
+          <label htmlFor="exampleInputUsername">Username</label>
+          <input type="username" 
+              className="form-control" 
+              id="username" 
+              placeholder="Username"
+              value={state.username}
+              onChange={handleChange}
+           />
+      </div>
 
-  <Form.Group>
+      <div className="form-group text-left">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input type="password" 
+            className="form-control" 
+            id="password" 
+            placeholder="Password"
+            value={state.password}
+            onChange={handleChange}
+            />
+      </div>
+
+      <div className="form-group text-left">
+          <label htmlFor="exampleInputPassword1">Confirm Password</label>          
+          <input type="password" 
+            className="form-control" 
+            id="confirmPassword" 
+            placeholder="Confirm Password"
+            value={state.confirmPassword}
+            onChange={handleChange}
+          />
+      </div>
+
+
+
+      <Form.Group>
         
-  <Form.Control as="select">
-    <option>Beginner</option>
-    <option>Intermediate</option>
-    <option>Advanced</option>
-    <option>Professional</option>
-  </Form.Control>
-  </Form.Group>
+        <Form.Control as="select">
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+          <option>Professional</option>
+        </Form.Control>
+      </Form.Group>
+      
 
-
-  <Button variant="primary" type="submit">
+  <Button variant="primary" type="submit" onClick={handleSubmitClick}>
     Submit
   </Button>
 
+
   </Form>
+
+  <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
+                {state.successMessage}
+            </div>
+            <div className="mt-2">
+                <span>Already have an account? </span>
+                <Link to="/login">Login</Link>
+ 
+            </div>
+
+    <br/> 
     
-    <br/>
-    
-   
 
 
 
         </div>
+
+
 
     )
 }
 
 
 
-export default Signup;
-
-// create a function same name as folder 
+export default withRouter(Signup);
