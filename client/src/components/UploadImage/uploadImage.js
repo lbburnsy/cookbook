@@ -1,59 +1,34 @@
-import React from 'react';
-import ImageUploading from 'react-images-uploading';
- 
+import React from "react";
+import { Form } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
 function UploadImage() {
-  const [images, setImages] = React.useState([]);
-  const maxNumber = 69;
- 
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
-    setImages(imageList);
-  };
- 
-  return (
-    <div className="UploadImage">
-      <ImageUploading
-        multiple
-        value={images}
-        onChange={onChange}
-        maxNumber={maxNumber}
-        dataURLKey="data_url"
-      >
-        {({
-          imageList,
-          onImageUpload,
-          onImageRemoveAll,
-          onImageUpdate,
-          onImageRemove,
-          isDragging,
-          dragProps,
-        }) => (
-          // write your building UI
-          <div className="upload__image-wrapper">
-            <button className="upload-image"
-              style={isDragging ? { color: 'red' } : undefined}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
-              Click or Drop here
-            </button>
-            &nbsp;
-            <button onClick={onImageRemoveAll}>Remove all images</button>
-            {imageList.map((image, index) => (
-              <div key={index} className="image-item">
-                <img src={image['data_url']} alt="" width="100" />
-                <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </ImageUploading>
-    </div>
-  );
+  return(
+    <>
+
+      <Container>
+        <Row>
+          <Col xs={6} md={4}>
+            <Image src="holder.js/171x180" rounded />
+          </Col>
+        </Row>
+      </Container>
+
+      <Form.Group controlId="formFile" className="mb-3 mt-5 mb-5">
+        <Form.Label className="font">Upload your recipe image here</Form.Label>
+        <Form.Control className="mt-3" type="file" />
+      </Form.Group>
+
+      <Button variant="primary" type="submit" value="Submit">Upload</Button>{' '}
+
+
+    </>
+
+  )
 }
 
 export default UploadImage;

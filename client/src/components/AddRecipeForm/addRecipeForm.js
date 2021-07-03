@@ -1,7 +1,3 @@
-// import React from "react";
-// import { Form } from "react-bootstrap";
-// import { Col } from "react-bootstrap";
-// import UploadImage from "../UploadImage/uploadImage";
 import "./addRecipeForm.css";
 import React, { Component } from "react";
 import RecipeBasicsFormSection from "../../components/RecipeBasicsFormSection/recipeBasicsFormSection";
@@ -16,9 +12,11 @@ export class AddRecipeForm extends Component {
         recipeName: "",
         category: "",
         cuisine: "",
-        prepTime: "",
-        cookingTime: "",
-        ingredients: "",
+        prepTimeHours: "",
+        prepTimeMinutes: "",
+        cookingTimeHours: "",
+        cookingTimeMinutes: "",
+        ingredients: [],
         directions: "",
         servings: ""
     }
@@ -47,8 +45,8 @@ export class AddRecipeForm extends Component {
 
     render() {
         const { step } = this.state;
-        const { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings } = this.state;
-        const values = { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings };
+        const { recipeName, category, cuisine, prepTimeHours, prepTimeMinutes, cookingTimeHours, cookingTimeMinutes, ingredients, directions, servings } = this.state;
+        const values = { recipeName, category, cuisine, prepTimeHours, prepTimeMinutes, cookingTimeHours, cookingTimeMinutes, ingredients, directions, servings };
        
         switch(step) {
             case 1:

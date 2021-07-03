@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import UploadImage from "../UploadImage/uploadImage";
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "./recipeBasicsFormSection.css";
+import UploadImage from "../../components/UploadImage/uploadImage";
 
 export class RecipeBasicsFormSection extends Component {
     continue = event => {
@@ -14,7 +14,8 @@ export class RecipeBasicsFormSection extends Component {
         const  { values, handleChange } = this.props;
         return(
             <div>
-                {/* <UploadImage /> */}
+
+                <UploadImage />
 
                 <Form className="form-width mt-5">
     
@@ -64,8 +65,8 @@ export class RecipeBasicsFormSection extends Component {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridHours">
                         <Form.Label className="font">Hours</Form.Label>
-                        <Form.Control onChange={handleChange('prepTime')} 
-                        defaultValue={values.prepTime} as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('prepTimeHours')} 
+                        defaultValue={values.prepTimeHours} as="select" >
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -74,8 +75,8 @@ export class RecipeBasicsFormSection extends Component {
 
                         <Form.Group as={Col} controlId="formGridMinutes">
                         <Form.Label className="font">Minutes</Form.Label>
-                        <Form.Control onChange={handleChange('prepTime')} 
-                        defaultValue={values.prepTime} as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('prepTimeMinutes')} 
+                        defaultValue={values.prepTimeMinutes} as="select" >
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>
@@ -87,8 +88,8 @@ export class RecipeBasicsFormSection extends Component {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridHours">
                         <Form.Label className="font">Hours</Form.Label>
-                        <Form.Control onChange={handleChange('cookingTime')} 
-                        defaultValue={values.cookingTime} as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('cookingTimeHours')} 
+                        defaultValue={values.cookingTimeHours} as="select" >
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
@@ -97,8 +98,8 @@ export class RecipeBasicsFormSection extends Component {
 
                         <Form.Group as={Col} controlId="formGridMinutes">
                         <Form.Label className="font">Minutes</Form.Label>
-                        <Form.Control onChange={handleChange('cookingTime')} 
-                        defaultValue={values.cookingTime} as="select" defaultValue="Choose...">
+                        <Form.Control onChange={handleChange('cookingTimeMinutes')} 
+                        defaultValue={values.cookingTimeMinutes} as="select" >
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>
