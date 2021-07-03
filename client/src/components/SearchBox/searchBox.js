@@ -21,9 +21,12 @@ function SearchBox(props){
  
 
 }
-  
+  const onSubmit = (e) => {
+    e.preventDefault();
+    props.onText();
+  }
     return(
-        <div className="searchbox py-2">
+        <form className="searchbox py-2" onSubmit= {onSubmit}>
 
            
                 <SearchBar 
@@ -35,7 +38,7 @@ function SearchBox(props){
                 />
           
 
-        </div>
+        </form>
     )
 }
 
