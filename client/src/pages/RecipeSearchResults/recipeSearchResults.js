@@ -14,13 +14,13 @@ function RecipeSearchResults(props) {
       {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
       <div className="row">
 <div className="col-12 col-md-4">
-      <Filter className="filterComponent" onChange={props.onFilterChange}/>
+      <Filter className="filterComponent" onChange={props.onFilterChange} filter={props.filter}/>
       </div>
       <div className="col-12 col-md-8">
       <FoodCardContainer className="recipeCards" recipes={props.recipes} itemColClass={"col-12 col-md-4"}/>
-      </div>
-      </div>
     </div>
+    </div>
+      </div>
   );
 }
 

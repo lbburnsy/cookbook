@@ -16,8 +16,9 @@ export class ConfirmRecipeForm extends Component {
     
     render() {
         const  { 
-            values: { recipeName, category, cuisine, prepTime, cookingTime, ingredients, directions, servings } 
+            values: { recipeName, category, cuisine, prepTimeHours, prepTimeMinutes, cookingTimeHours, cookingTimeMinutes, ingredients, directions, servings } 
         } = this.props;
+        
         return(
             <div>
 
@@ -27,9 +28,9 @@ export class ConfirmRecipeForm extends Component {
                         <ListGroup.Item text={ recipeName }>Recipe Name: { recipeName }</ListGroup.Item>
                         <ListGroup.Item text={ category }>Category: { category }</ListGroup.Item>
                         <ListGroup.Item text={ cuisine }>Cuisine: { cuisine }</ListGroup.Item>
-                        <ListGroup.Item text={ prepTime }>Prep Time: { prepTime }</ListGroup.Item>
-                        <ListGroup.Item text={ cookingTime }>Cooking Time: { cookingTime }</ListGroup.Item>
-                        <ListGroup.Item text={ ingredients }>Ingredients: { ingredients }</ListGroup.Item>
+                        <ListGroup.Item >Prep Time: { prepTimeHours } Hours, { prepTimeMinutes } Minutes </ListGroup.Item>
+                        <ListGroup.Item >Cooking Time: { cookingTimeHours } Hours, { cookingTimeMinutes } Minutes</ListGroup.Item>
+                        <ListGroup.Item text={ "ingredients" }>Ingredients: {  ingredients.map(function(ingredient, index) { return ingredient.Ingredient}).join(",") }</ListGroup.Item> 
                         <ListGroup.Item text={ directions }>Directions: { directions }</ListGroup.Item>
                         <ListGroup.Item text={ servings }>Number of servings: { servings }</ListGroup.Item>
                     </ListGroup>
@@ -37,12 +38,14 @@ export class ConfirmRecipeForm extends Component {
                     
                 </Alert>
 
-                <Button className="m-2" variant="primary" type="confirm" onClick={this.continue}>
-                        Confirm
-                </Button>
                 <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back
                 </Button>
+
+                <Button className="m-2" variant="primary" type="confirm" onClick={this.continue}>
+                        Confirm
+                </Button>
+               
                 
             </div>               
 
