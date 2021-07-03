@@ -5,20 +5,20 @@ export const SidebarData = [
     {
         title: "Add New Recipe",
         path: "/addrecipe",
-        icon: <i className="fas fa-plus"></i>,
+        icon: <i className="fa fa-plus"></i>,
         cName: "nav-text"
     },
     {
         title: "Cook Book",
         path: "/cookbook",
-        icon: <i className="fas fa-book-open"></i>,
+        icon: <i className="fa fa-book"></i>,
         cName: "nav-text"
     },
     
     {
         title: "Favorite Recipe",
         path: "/favorite",
-        icon: <i className="fas fa-heart-circle"></i>,
+        icon: <i className="fa fa-gratipay"></i>,
         cName: "nav-text"
     },
 ];
