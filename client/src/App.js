@@ -65,6 +65,7 @@ function App() {
         setRecipes(res.data);
         setSearchedRecipes(res.data);
         setFilteredRecipes(res.data);
+        console.log(res.data)
         // two tiers of filltering data first tier is search box second tier is the filter of the searched recipes
       })
       .catch((err) => console.log(err));
@@ -83,12 +84,13 @@ function App() {
   }
 
   function onText(text, hits) {
+    if (text === "") return;
     if (hits) {
       setSearchedRecipes(hits);
     }
- // setFilteredRecipes(applyFilter(filter, hits))
+    // setFilteredRecipes(applyFilter(filter, hits))
     console.log(hits);
-    setFilteredRecipes(applyFilter(filter, searchedRecipes));
+    // setFilteredRecipes(applyFilter(filter, searchedRecipes));
     // searchedRecipes is only set when the user types in the searchbox so it is the result of filtering the entier data set by what is in search box
   }
 

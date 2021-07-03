@@ -13,25 +13,33 @@ function SearchBox(props){
     
   const history = useHistory();  
 
-  //how to set the state based on the text input
-  //how to display stuff when the button is clicked
+
   const onSearch = (text, hits) => {
   props.onSearch(text, hits)
   history.push(`/recipesearchresults/`)
  
 
 }
+const resetText = () => {
+  const form = document.getElementsByClassName("search-container");
+  const input = (form[0].children[0]);
+  input.value = "";
+}
   const onSubmit = (e) => {
     e.preventDefault();
     props.onText();
+    resetText()
   }
     return(
         <form className="searchbox py-2" onSubmit= {onSubmit}>
 
            
                 <SearchBar 
+                id= "hello"
+                // caseInsensitive = {false}
+                // ^ this prop does not work
                 onSearchTextChange={props.onText}
-                // everytime you type a letter a change is triggred 
+                // everytime you type a letter a change is triggred only in filter component
                 onSearchButtonClick={onSearch}
                 placeHolderText={"Search here..."}
                 data={props.recipes}
@@ -43,3 +51,5 @@ function SearchBox(props){
 }
 
 export default SearchBox;
+
+// react-js-search is a really buggy npm package 
