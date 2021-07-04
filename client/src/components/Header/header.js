@@ -6,8 +6,8 @@ function Header({title}) {
 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="contactHeaderBackground">
-                        <h2 className="pt-5">{title}</h2>
+                    <div className="col-12 d-flex">
+                        <h2 className="pt-5 mx-auto">{title}</h2>
                     </div>
                 </div>
             </div>

@@ -27,10 +27,10 @@ function Home() {
       {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))} */}
-      <ShowMoreButton more="/recipes" />
+      <ShowMoreButton more="/recipes" title="Recipes" />
       <Header title="Categories"/>
       <FoodCardContainer recipes={Categories} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
-      <ShowMoreButton more="/categories" />
+      <ShowMoreButton more="/categories" title="Categories" />
     </div>
   );
 }

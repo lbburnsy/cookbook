@@ -5,7 +5,7 @@ import FoodCardBody from "./FoodCardBody";
 function FoodCardContainer(props) {
   return (
      
-        <div className="row my-5 recipes px-4">
+        <div className="row my-5 px-4">
           {props.recipes.map((recipe, index) => (
             <FoodCardBody key={index} img={recipe.image} name={recipe.name} itemColClass={props.itemColClass}/>
           ))}
