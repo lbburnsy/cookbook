@@ -5,11 +5,12 @@ import SearchBox from "../../components/SearchBox/searchBox";
 
 import "./recipeSearchResults.css";
 import { propTypes } from "react-bootstrap/esm/Image";
+import Header from "../../components/Header/header";
 
 function RecipeSearchResults(props) {
   return (
     <div className="container-fluid">
-       <h1>Recipe Search Result Page</h1>
+      <Header title="Recipe Search Results" />
       <br />
       {/* <SearchBox className="searchBox" onSearch={} onText={}/> */}
       <div className="row">
