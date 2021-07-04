@@ -9,12 +9,12 @@ function FoodCardBody(props) {
     <div className={props.itemColClass}>
        {/* <Favorite id={props.id} /> */}
       <Favorite  />
-      <div className="card recipe-card-noborder">
+      <div className="card border-0">
         <img
           src={props.img}
-          className="card-img-top recipe-card-border"
-          alt={props.name}
-        ></img>
+          className="card-img-top"
+          alt={props.name}>
+          </img>
       </div>
       <div className="card-body">
         <a href={props.name}>

@@ -4,7 +4,7 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-export class IngredientsList extends Component {
+class IngredientsList extends Component {
     state={
         amount: "",
         amount1: "",

@@ -45,7 +45,7 @@ const resetText = () => {
                 onSearchTextChange={props.onText}
                 // everytime you type a letter a change is triggred only in filter component
                 onSearchButtonClick={onSearch}
-                placeHolderText={"Search here..."}
+                placeHolderText={"Find your recipe"}
                 data={props.recipes}
                 keys={["name", "ingredients", "cuisine", "category"]}
                 />
