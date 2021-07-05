@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(compression());
+// app.use(compression());
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
