@@ -6,7 +6,7 @@ import Favorite from "../Favorite/favorite";
 function FoodCardBody(props) {
   return (  
     
-    <div className={props.itemColClass} onClick={() => props.onRecipeClick(props.recipe)}>
+    <div className={props.itemColClass} onClick={(e) => props.onRecipeClick(e, props.recipe)}>
        {/* <Favorite id={props.id} /> */}
       <Favorite  />
       <div className="card border-0" >
