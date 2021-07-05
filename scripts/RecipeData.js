@@ -1,4 +1,4 @@
-exports.seedData = [
+exports.RecipeData = [
   {
     name: "Cinnamon Roll Pancakes",
     image:
