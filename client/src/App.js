@@ -111,7 +111,8 @@ function App() {
     setFilteredRecipes(applyFilter(newFilter, searchedRecipes));
   };
 
-  const onRecipeClick = (recipe) => {
+  const onRecipeClick = (e, recipe) => {
+    e.preventDefault()
     setRecipe(recipe)
   setTimeout(() => history.push("/recipedetailspage"), 200)
 

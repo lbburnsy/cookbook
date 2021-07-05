@@ -3,8 +3,15 @@ import RecipeDetailSideBar from "../../components/RecipeDetailSideBar/recipeDeta
 import RecipeDetailsBody from "../../components/RecipeDetailsBody/recipeDetailsBody";
 import "./recipeDetailsPage.css";
 import Header from "../../components/Header/header";
+import { useHistory } from "react-router-dom"
+
+
 
 function RecipeDetailsPage(props) {
+    const history =  useHistory()
+    if (!props.recipe) {
+        history.push("/")
+    } 
     return (
         <div className="container mt-5">
             <Header title={props.recipe?.name} />
