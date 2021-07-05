@@ -8,9 +8,9 @@ function RecipeDetailsBody(props) {
                 <Card.Title>Ingredients</Card.Title>
                 <Card.Text>
                 <ol>
-                    {/* {props.recipe.ingredients.map((ingredient, index) => {
+                    {props?.recipe?.ingredients?.map((ingredient, index) => {
                         return   <li key={index}>{ingredient}</li>
-                    })} */}
+                    })}
                     
                 </ol>
                 </Card.Text>
@@ -20,7 +20,9 @@ function RecipeDetailsBody(props) {
             <Card.Title>Directions</Card.Title>
                 <Card.Text>
                 <ol>
-                    <li> </li>
+                {props?.recipe?.instructions?.map((instruction, index) => {
+                        return   <li key={index}>{instruction}</li>
+                    })}
                 </ol>
                 </Card.Text>
             </Card.Body>

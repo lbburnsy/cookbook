@@ -113,7 +113,7 @@ function App() {
 
   const onRecipeClick = (recipe) => {
     setRecipe(recipe)
-    history.push("/recipedetailspage")
+  setTimeout(() => history.push("/recipedetailspage"), 200)
 
   }
 
