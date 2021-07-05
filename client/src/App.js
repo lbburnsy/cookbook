@@ -8,7 +8,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
 import RecipeSearchResults from "./pages/RecipeSearchResults/recipeSearchResults";
 import ProfilePage from "./pages/ProfilePage/profilePage";
-import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
+import {  Switch, Route, useHistory } from "react-router-dom";
 import Cookbook from "./pages/Cookbook/cookbook";
 import Addrecipe from "./pages/Addrecipe/addrecipe";
 import Favorite from "./pages/Favorite/favorite";
@@ -122,8 +122,8 @@ function App() {
       <div className="app">
         <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
         <Switch>
-          <Route path="/" exact component= { Home }/>
-          <Route path="/recipes" component= { Recipes }/>
+          <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} />}/>
+          <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} />}/>
           <Route path="/categories" component= { CategoriesPage }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
