@@ -7,10 +7,10 @@ import Header from "../../components/Header/header";
 function RecipeDetailsPage(props) {
     return (
         <div className="container mt-5">
-            <Header title={props.recipe.name} />
+            <Header title={props.recipe?.name} />
             <div className="row">
                 <div className="col-lg-4">
-                  <img src={props.recipe.image} className="img" alt="nutty bar"></img>  
+                  <img src={props.recipe?.image} className="img" alt="nutty bar"></img>  
                 <RecipeDetailSideBar recipe={props.recipe}/>    
                 </div>
                 <div className="col-lg-8">
