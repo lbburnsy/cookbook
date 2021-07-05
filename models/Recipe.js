@@ -59,7 +59,7 @@ Recipe.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "backend",
+    modelName: "recipe",
   }
 );
 
