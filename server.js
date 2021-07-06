@@ -7,10 +7,12 @@ const cors = require("cors");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-console.log("Line 9");
-
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
 
 const sess = {
   secret: "Super secret secret",
@@ -22,20 +24,15 @@ const sess = {
   }),
 };
 
-console.log("Line 25");
-
-app.use(session(sess));
+// app.use(session(sess));
+app.use(cors(corsOptions));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.use(cors());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-console.log("Line 38");
 
 // app.use(compression());
 app.use(routes);
