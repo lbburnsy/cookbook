@@ -1,4 +1,4 @@
-exports.RecipeData = [
+export const RecipeData = [
   {
     name: "Cinnamon Roll Pancakes",
     image:
