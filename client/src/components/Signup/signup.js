@@ -38,7 +38,8 @@ function Signup() {
       });
 
       if (response.ok) {
-        <Redirect to="/" />;
+        // <Redirect to="/" />;
+        console.log("okay");
       } else {
         alert(response.statusText);
       }
