@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import "./signup.css";
 import { Redirect, withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 
 function Signup() {
   const [state, setState] = useState({
@@ -22,7 +23,7 @@ function Signup() {
     }));
   };
 
-  const sendDetailsToServer = () => {
+  const sendDetailsToServer = async () => {
     if (state.email.length && state.username && state.password.length) {
       // props.showError(null);
       const payload = {
@@ -31,18 +32,7 @@ function Signup() {
         password: state.password,
         abilityLevel: state.abilityLevel,
       };
-      const response = fetch("/api/user", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      if (response.ok) {
-        // <Redirect to="/" />;
-        console.log("okay");
-      } else {
-        alert(response.statusText);
-      }
+      API.createUser(payload);
     }
   };
 

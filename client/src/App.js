@@ -8,7 +8,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
 import RecipeSearchResults from "./pages/RecipeSearchResults/recipeSearchResults";
 import ProfilePage from "./pages/ProfilePage/profilePage";
-import {  Switch, Route, useHistory } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Cookbook from "./pages/Cookbook/cookbook";
 import Addrecipe from "./pages/Addrecipe/addrecipe";
 import Favorite from "./pages/Favorite/favorite";
@@ -42,8 +42,8 @@ const applyFilter = (filter, text) => {
   items = filterItems("cuisine", filter.cuisine, items);
   items = filterItems("category", filter.category, items);
   return items;
-}
-const initFilter = {ingredients: "", cuisine: "", category: ""};
+};
+const initFilter = { ingredients: "", cuisine: "", category: "" };
 
 function App() {
   const history = useHistory();
@@ -66,7 +66,7 @@ function App() {
         setRecipes(res.data);
         setSearchedRecipes(res.data);
         setFilteredRecipes(res.data);
-        console.log(res.data)
+        console.log(res.data);
         // two tiers of filltering data first tier is search box second tier is the filter of the searched recipes
       })
       .catch((err) => console.log(err));
@@ -96,60 +96,76 @@ function App() {
   }
 
   const onFilterChange = (e) => {
-    console.log(e.target.name, e.target.value)
-    const {name, value} =  e.target;
+    console.log(e.target.name, e.target.value);
+    const { name, value } = e.target;
     let newFilter = "";
     switch (name) {
       case "clearButton":
         newFilter = initFilter;
         break;
-      default: 
-       newFilter = {...filter, [name]: value};
+      default:
+        newFilter = { ...filter, [name]: value };
     }
-    
+
     setFilter(newFilter);
     setFilteredRecipes(applyFilter(newFilter, searchedRecipes));
   };
 
   const onRecipeClick = (e, recipe) => {
-    e.preventDefault()
-    setRecipe(recipe)
-  setTimeout(() => history.push("/recipedetailspage"), 200)
-
-  }
+    e.preventDefault();
+    setRecipe(recipe);
+    setTimeout(() => history.push("/recipedetailspage"), 200);
+  };
 
   return (
-    
-      <div className="app">
-        <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
-        <Switch>
-          <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} />}/>
-          <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} />}/>
-          <Route path="/categories" component= { CategoriesPage }/>
-          <Route path="/signup" component= { Signup }/>
-          <Route path="/login" component= { Login }/>
-          <Route path="/profile" component= { ProfilePage }/> 
-          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onRecipeClick={onRecipeClick} onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} />}/>
-          <Route path="/recipedetailspage" render= { () => <RecipeDetailsPage recipe={recipe} />}/>
+    <div className="app">
+      <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
+      <Switch>
+        <Route
+          path="/"
+          exact
+          render={() => <Home onRecipeClick={onRecipeClick} />}
+        />
+        <Route
+          path="/recipes"
+          render={() => <Recipes onRecipeClick={onRecipeClick} />}
+        />
+        <Route path="/categories" component={CategoriesPage} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/login" component={Login} />
+        <Route path="/profile" component={ProfilePage} />
+        <Route
+          path="/recipesearchresults"
+          render={() => (
+            <RecipeSearchResults
+              onRecipeClick={onRecipeClick}
+              onFilterChange={onFilterChange}
+              recipes={filteredRecipes}
+              filter={filter}
+            />
+          )}
+        />
+        <Route
+          path="/recipedetailspage"
+          render={() => <RecipeDetailsPage recipe={recipe} />}
+        />
 
+        {/* Sidebar */}
+        <Route path="/cookbook" component={Cookbook} />
+        <Route path="/addrecipe" component={Addrecipe} />
+        <Route path="/favorite" component={Favorite} />
 
-{/* Sidebar */}
-          <Route path='/cookbook' component={ Cookbook } />
-          <Route path='/addrecipe' component={ Addrecipe} />
-          <Route path='/favorite' component={ Favorite } />
+        {/* Sidebar */}
+        <Route path="/cookbook" component={Cookbook} />
+        <Route path="/addrecipe" component={Addrecipe} />
+        <Route path="/favorite" component={Favorite} />
 
-          {/* Sidebar */}
-          <Route path="/cookbook" component={Cookbook} />
-          <Route path="/addrecipe" component={Addrecipe} />
-          <Route path="/favorite" component={Favorite} />
-
-          {/* add recipe choices */}
-          <Route path="/basics" component={Basics} />
-          <Route path="/ingredients" component={Ingredients} />
-          <Route path="/recipesteps" component={RecipeSteps} />
-        </Switch>
-      </div>
- 
+        {/* add recipe choices */}
+        <Route path="/basics" component={Basics} />
+        <Route path="/ingredients" component={Ingredients} />
+        <Route path="/recipesteps" component={RecipeSteps} />
+      </Switch>
+    </div>
   );
 }
 

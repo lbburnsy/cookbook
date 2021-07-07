@@ -1,19 +1,48 @@
 const router = require("express").Router();
-const { User, Recipe } = require("../../models");
+const { User } = require("../../models");
 
-router.post("/", async (req, res) => {
-  // console.log(req.body);
+// Login
+router.post("/login", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;
-    // });
-    res.status(200).json(userData);
+    // If no data, throw err
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: "Incorrect email or password, please try again." });
+      return;
+    }
+
+    // Checks password from the userData
+    const validPassword = await userData.checkPassword(req.body.checkPassword);
+
+    // If password is wrong, throw err.
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: "Incorrect email or password, please try again." });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+    });
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+// Creates user
+router.post("/", (req, res) => {
+  User.create(req.body)
+    .then((newUser) => {
+      res.send(newUser);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = router;
