@@ -24,7 +24,7 @@ const sess = {
   }),
 };
 
-// app.use(session(sess));
+app.use(session(sess));
 app.use(cors(corsOptions));
 
 if (process.env.NODE_ENV === "production") {
@@ -37,6 +37,6 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(compression());
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}`));
 });
