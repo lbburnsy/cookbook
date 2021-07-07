@@ -69,6 +69,10 @@ function Signup() {
       }
   }
     return(
+        <div className="container-fluid hero d-flex" style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL
+                + "/assets/pexels-ray-piedra-1565982.jpg"})`
+          }}  >
         <div className="signup">
   <Form>
       <div className="form-group text-left">
@@ -130,7 +134,7 @@ function Signup() {
       </Form.Group>
       
 
-  <Button variant="primary" type="submit" onClick={handleSubmitClick}>
+  <Button variant="warning" type="submit" onClick={handleSubmitClick}>
     Submit
   </Button>
 
@@ -152,7 +156,7 @@ function Signup() {
 
 
         </div>
-
+    </div>
 
 
     )
