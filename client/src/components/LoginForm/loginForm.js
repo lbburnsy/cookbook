@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./loginForm.css"
 
+
 function LoginForm() {
   const [state , setState] = useState({
       email : "",
@@ -54,9 +55,13 @@ function LoginForm() {
 //   }
 
   return(
-      <div className="login">
-          <Form>
-              <div className="form-group text-left">
+    <div className="container-fluid hero d-flex" style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL
+            + "/assets/pexels-ray-piedra-1565982.jpg"})`
+      }}  >
+    <div className="login">
+         <Form>
+             <div className="form-group text-left">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" 
                      className="form-control" 
@@ -66,7 +71,6 @@ function LoginForm() {
                      value={state.email}
                      onChange={handleChange}
               />
-              <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div className="form-group text-left">
               <label htmlFor="exampleInputPassword1">Password</label>
@@ -80,7 +84,7 @@ function LoginForm() {
               </div>
               <div className="form-check">
               </div>
-              <Button variant="primary" type="submit" onClick={handleSubmitClick}>
+              <Button variant="warning" type="submit" className="sub-btn" onClick={handleSubmitClick}>
                   Submit
               </Button>
           </Form>
@@ -88,10 +92,11 @@ function LoginForm() {
               {state.successMessage}
           </div>
           <div className="signupMessage">
-              <span>Dont have an account? </span>
+              <span>Don't have an account? </span>
               <Link to="/signup">Signup</Link>
  
           </div>
+      </div>
       </div>
   )
 }
