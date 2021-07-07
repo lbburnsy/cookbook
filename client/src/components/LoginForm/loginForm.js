@@ -25,7 +25,9 @@ function LoginForm() {
       email: state.email,
       password: state.password,
     };
-    API.getUser(payload);
+    API.getUser(payload).then((response) =>
+      console.log(response.data.username)
+    );
   };
 
   return (
