@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-function RecipeDetailsBody() {
+function RecipeDetailsBody(props) {
     return(
         <div className="RecipeDetailSideBar">
            <Card>
@@ -8,8 +8,10 @@ function RecipeDetailsBody() {
                 <Card.Title>Ingredients</Card.Title>
                 <Card.Text>
                 <ol>
-                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                    </li>
+                    {props?.recipe?.ingredients?.map((ingredient, index) => {
+                        return   <li key={index}>{ingredient}</li>
+                    })}
+                    
                 </ol>
                 </Card.Text>
             
@@ -18,8 +20,9 @@ function RecipeDetailsBody() {
             <Card.Title>Directions</Card.Title>
                 <Card.Text>
                 <ol>
-                    <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                    </li>
+                {props?.recipe?.instructions?.map((instruction, index) => {
+                        return   <li key={index}>{instruction}</li>
+                    })}
                 </ol>
                 </Card.Text>
             </Card.Body>

@@ -6,7 +6,7 @@ import Header from "../../components/Header/header";
 
 
 
-function Recipes() {
+function Recipes(props) {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Recipes() {
   return (
     <div className="recipes">
       <Header title="Recipes"/>
-      <FoodCardContainer recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
+      <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
     </div>
   );
 }

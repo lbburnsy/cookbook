@@ -6,8 +6,10 @@ import Categories from "../../utils/categories.json";
 import Header from "../../components/Header/header";
 import ShowMoreButton from "../../components/ShowMoreButton/showMoreButton";
 
-function Home() {
+
+function Home(props) {
   const [recipes, setRecipes] = useState([]);
+
 
   useEffect(() => {
     loadRecipes();
@@ -18,12 +20,13 @@ function Home() {
       .then((res) => setRecipes(res.data))
       .catch((err) => console.log(err));
   }
+ 
 
   return (
     <div className="home">
       <Hero />
       <Header title="Recipes"/>
-      <FoodCardContainer recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
+      <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
       {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))} */}

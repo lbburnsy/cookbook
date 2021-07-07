@@ -3,18 +3,25 @@ import RecipeDetailSideBar from "../../components/RecipeDetailSideBar/recipeDeta
 import RecipeDetailsBody from "../../components/RecipeDetailsBody/recipeDetailsBody";
 import "./recipeDetailsPage.css";
 import Header from "../../components/Header/header";
+import { useHistory } from "react-router-dom"
 
-function RecipeDetailsPage() {
+
+
+function RecipeDetailsPage(props) {
+    const history =  useHistory()
+    if (!props.recipe) {
+        history.push("/")
+    } 
     return (
         <div className="container mt-5">
-            <Header title="Recipe Details Page" />
+            <Header title={props.recipe?.name} />
             <div className="row">
                 <div className="col-lg-4">
-                  <img src="https://images.kitchenstories.io/communityImages/c0b4b1026931ea2b0659b264f87dfefc_d1878d04-5876-406c-93ef-94b5a55af7cd.jpg" className="img" alt="nutty bar"></img>  
-                <RecipeDetailSideBar/>    
+                  <img src={props.recipe?.image} className="img" alt="nutty bar"></img>  
+                <RecipeDetailSideBar recipe={props.recipe}/>    
                 </div>
                 <div className="col-lg-8">
-                <RecipeDetailsBody/> 
+                <RecipeDetailsBody recipe={props.recipe}/> 
                 </div>
             </div>
 

@@ -8,7 +8,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./pages/Login/login";
 import RecipeSearchResults from "./pages/RecipeSearchResults/recipeSearchResults";
 import ProfilePage from "./pages/ProfilePage/profilePage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {  Switch, Route, useHistory } from "react-router-dom";
 import Cookbook from "./pages/Cookbook/cookbook";
 import Addrecipe from "./pages/Addrecipe/addrecipe";
 import Favorite from "./pages/Favorite/favorite";
@@ -46,11 +46,12 @@ const applyFilter = (filter, text) => {
 const initFilter = {ingredients: "", cuisine: "", category: ""};
 
 function App() {
-  // const history = useHistory();
+  const history = useHistory();
   const [recipes, setRecipes] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [filter, setFilter] = useState(initFilter);
+  const [recipe, setRecipe] = useState();
   // recipe is what saves the original data
   //searchedRecipes is the data filtered by what the user types in the search bar
   // filteredRecipes is the searchedRecipes filtered by what the user types in the ingridents cuisine and mealtype
@@ -110,19 +111,26 @@ function App() {
     setFilteredRecipes(applyFilter(newFilter, searchedRecipes));
   };
 
+  const onRecipeClick = (e, recipe) => {
+    e.preventDefault()
+    setRecipe(recipe)
+  setTimeout(() => history.push("/recipedetailspage"), 200)
+
+  }
+
   return (
-    <Router>
+    
       <div className="app">
         <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
         <Switch>
-          <Route path="/" exact component= { Home }/>
-          <Route path="/recipes" component= { Recipes }/>
+          <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} />}/>
+          <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} />}/>
           <Route path="/categories" component= { CategoriesPage }/>
           <Route path="/signup" component= { Signup }/>
           <Route path="/login" component= { Login }/>
           <Route path="/profile" component= { ProfilePage }/> 
-          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} />}/>
-          <Route path="/recipedetailspage" component= { RecipeDetailsPage }/>
+          <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onRecipeClick={onRecipeClick} onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} />}/>
+          <Route path="/recipedetailspage" render= { () => <RecipeDetailsPage recipe={recipe} />}/>
 
 
 {/* Sidebar */}
@@ -141,7 +149,7 @@ function App() {
           <Route path="/recipesteps" component={RecipeSteps} />
         </Switch>
       </div>
-    </Router>
+ 
   );
 }
 
