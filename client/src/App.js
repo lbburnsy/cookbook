@@ -24,8 +24,8 @@ const filterItems = (name, value, data) => {
       return data.filter(
         (item) =>
           value === "" ||
-          item[name].some((item1) =>
-            item1.toLowerCase().includes(value.toLowerCase())
+        item[name].some((item1) => 
+           item1.toLowerCase().includes(value.toLowerCase())
           )
       );
     default:
@@ -38,6 +38,7 @@ const filterItems = (name, value, data) => {
 };
 
 const applyFilter = (filter, text) => {
+
   let items = filterItems("ingredients", filter.ingredients, text);
   items = filterItems("cuisine", filter.cuisine, items);
   items = filterItems("category", filter.category, items);
@@ -75,28 +76,19 @@ function App() {
 
   function onSearch(text) {
     setFilteredRecipes(applyFilter(filter, searchedRecipes));
-    console.log(text);
-
-    // setTimeout(() => window.location = "/recipesearchresults", 500)
-    // window.location = "/recipesearchresults";
-    // tryed earlier to change the window location to this ^ but still did not work
-    // this is where I am stuck I can not figure out how to get the search results to render in recipesearchresults page
-    // history.push(`/recipesearchresults/?search=${text}`)
   }
 
   function onText(text, hits) {
-    if (text === "") return;
+   
+    if (!text) return;
     if (hits) {
       setSearchedRecipes(hits);
     }
-    // setFilteredRecipes(applyFilter(filter, hits))
-    console.log(hits);
-    // setFilteredRecipes(applyFilter(filter, searchedRecipes));
-    // searchedRecipes is only set when the user types in the searchbox so it is the result of filtering the entier data set by what is in search box
+      // searchedRecipes is only set when the user types in the searchbox so it is the result of filtering the entier data set by what is in search box
   }
 
   const onFilterChange = (e) => {
-    console.log(e.target.name, e.target.value)
+    // console.log(e.target.name, e.target.value)
     const {name, value} =  e.target;
     let newFilter = "";
     switch (name) {
@@ -114,7 +106,7 @@ function App() {
   const onRecipeClick = (e, recipe) => {
     e.preventDefault()
     setRecipe(recipe)
-  setTimeout(() => history.push("/recipedetailspage"), 200)
+  setTimeout(() => history.push("/recipedetailspage"), 500)
 
   }
 
