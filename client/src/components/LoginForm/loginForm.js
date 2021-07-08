@@ -5,12 +5,14 @@ import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./loginForm.css";
 import API from "../../utils/API";
+import Cookies from "js-cookie";
 
-function LoginForm() {
+function LoginForm(props) {
   const [state, setState] = useState({
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setState((prevState) => ({
@@ -25,9 +27,18 @@ function LoginForm() {
       email: state.email,
       password: state.password,
     };
-    API.getUser(payload).then((response) =>
-      console.log(response.data.username)
-    );
+    API.getUser(payload).then((response) => {
+      let userCookie;
+      if (response.status == 200) {
+        userCookie = {
+          id: response.data.id,
+          name: response.data.username,
+          logged_in: true,
+        };
+      }
+      let cookie = Cookies.set("user", JSON.stringify(userCookie));
+      props.updateCookies(cookie);
+    });
   };
 
   return (
@@ -68,9 +79,7 @@ function LoginForm() {
         className="alert alert-success mt-2"
         style={{ display: state.successMessage ? "block" : "none" }}
         role="alert"
-      >
-        {state.successMessage}
-      </div>
+      ></div>
       <div className="signupMessage">
         <span>Don't have an account? </span>
         <Link to="/signup">Signup</Link>

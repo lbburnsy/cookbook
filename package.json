@@ -28,9 +28,11 @@
     "express": "^4.16.3",
     "express-session": "^1.17.2",
     "if-env": "^1.0.4",
+    "js-cookie": "^2.2.1",
     "mongoose": "^5.3.16",
     "mysql2": "^2.2.5",
     "omega-react-js-search": "^0.3.0",
+    "react-cookie": "^4.0.3",
     "react-images-uploading": "^3.1.2",
     "sequelize": "^6.6.4"
   }

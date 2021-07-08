@@ -17,6 +17,8 @@ import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
 import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
 import CategoriesPage from "./pages/Categories/categories";
+import { BrowserRouter as Router } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const filterItems = (name, value, data) => {
   switch (name) {
@@ -52,13 +54,21 @@ function App() {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [filter, setFilter] = useState(initFilter);
   const [recipe, setRecipe] = useState();
+  const [cookies, setCookies] = useState();
   // recipe is what saves the original data
   //searchedRecipes is the data filtered by what the user types in the search bar
   // filteredRecipes is the searchedRecipes filtered by what the user types in the ingridents cuisine and mealtype
 
   useEffect(() => {
     loadRecipes();
-  }, []);
+    displayCookie();
+  }, [cookies]);
+
+  function displayCookie() {
+    let cookie = JSON.parse(Cookies.get("user"));
+    console.log(cookie);
+  }
+
   // this is only called once because it has no dependances
   function loadRecipes() {
     API.getRecipes()
@@ -71,6 +81,11 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
+
+  function updateCookies(cookie) {
+    setCookies(cookie);
+  }
+
   // setting all of them to the entier data so that we do not get an error
 
   function onSearch(text) {
@@ -118,54 +133,64 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
-      <Switch>
-        <Route
-          path="/"
-          exact
-          render={() => <Home onRecipeClick={onRecipeClick} />}
+    <Router>
+      <div className="app">
+        <Navbar
+          onSearch={onSearch}
+          onText={onText}
+          recipes={recipes}
+          // loggedIn={cookies.logged_in}
         />
-        <Route
-          path="/recipes"
-          render={() => <Recipes onRecipeClick={onRecipeClick} />}
-        />
-        <Route path="/categories" component={CategoriesPage} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/login" component={Login} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route
-          path="/recipesearchresults"
-          render={() => (
-            <RecipeSearchResults
-              onRecipeClick={onRecipeClick}
-              onFilterChange={onFilterChange}
-              recipes={filteredRecipes}
-              filter={filter}
-            />
-          )}
-        />
-        <Route
-          path="/recipedetailspage"
-          render={() => <RecipeDetailsPage recipe={recipe} />}
-        />
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => <Home onRecipeClick={onRecipeClick} />}
+          />
+          <Route
+            path="/recipes"
+            render={() => <Recipes onRecipeClick={onRecipeClick} />}
+          />
+          <Route path="/categories" component={CategoriesPage} />
+          <Route path="/signup" component={Signup} />
+          <Route
+            path="/login"
+            render={() => <Login updateCookies={updateCookies} />}
+          />
+          <Route path="/profile" component={ProfilePage} />
+          <Route
+            path="/recipesearchresults"
+            render={() => (
+              <RecipeSearchResults
+                onRecipeClick={onRecipeClick}
+                onFilterChange={onFilterChange}
+                recipes={filteredRecipes}
+                filter={filter}
+              />
+            )}
+          />
+          <Route
+            path="/recipedetailspage"
+            render={() => <RecipeDetailsPage recipe={recipe} />}
+          />
 
-        {/* Sidebar */}
-        <Route path="/cookbook" component={Cookbook} />
-        <Route path="/addrecipe" component={Addrecipe} />
-        <Route path="/favorite" component={Favorite} />
+          {/* Sidebar */}
+          <Route path="/cookbook" component={Cookbook} />
+          <Route path="/addrecipe" component={Addrecipe} />
+          <Route path="/favorite" component={Favorite} />
 
-        {/* Sidebar */}
-        <Route path="/cookbook" component={Cookbook} />
-        <Route path="/addrecipe" component={Addrecipe} />
-        <Route path="/favorite" component={Favorite} />
+          {/* Sidebar */}
+          <Route path="/cookbook" component={Cookbook} />
+          <Route path="/addrecipe" component={Addrecipe} />
+          <Route path="/favorite" component={Favorite} />
 
-        {/* add recipe choices */}
-        <Route path="/basics" component={Basics} />
-        <Route path="/ingredients" component={Ingredients} />
-        <Route path="/recipesteps" component={RecipeSteps} />
-      </Switch>
-    </div>
+          {/* add recipe choices */}
+          <Route path="/basics" component={Basics} />
+          <Route path="/ingredients" component={Ingredients} />
+          <Route path="/recipesteps" component={RecipeSteps} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
