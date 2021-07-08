@@ -7,7 +7,7 @@ import './searchBox.css'
 import Ingredients from "../../pages/Ingredients/ingredients";
 
 
-// had a problem with figuring out how this is filtered / search will be done looking at all values in objects
+
 
 
 function SearchBox(props){
@@ -40,8 +40,7 @@ const resetText = () => {
            
                 <SearchBar 
                 id= "hello"
-                caseInsensitive = {true}
-                // ^ this prop does not work
+                // caseInsensitive = {true}
                 onSearchTextChange={props.onText}
                 // everytime you type a letter a change is triggred only in filter component
                 onSearchButtonClick={onSearch}

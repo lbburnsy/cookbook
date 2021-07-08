@@ -43,11 +43,37 @@ function Signup() {
     } else {
       // props.showError('Passwords do not match');
     }
+<<<<<<< HEAD
   };
   return (
     <div className="signup">
       <Form>
         <div className="form-group text-left">
+=======
+
+    const redirectToHome = () => {
+      // props.updateTitle('Home')
+      // props.history.push('/home');
+  }
+
+    
+    const handleSubmitClick = (e) => {
+      e.preventDefault();
+      if(state.password === state.confirmPassword) {
+          sendDetailsToServer()    
+      } else {
+          // props.showError('Passwords do not match');
+      }
+  }
+    return(
+        <div className="container-fluid hero d-flex" style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL
+                + "/assets/pexels-ray-piedra-1565982.jpg"})`
+          }}  >
+        <div className="signup">
+  <Form>
+      <div className="form-group text-left">
+>>>>>>> main
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
@@ -101,6 +127,7 @@ function Signup() {
             value={state.confirmPassword}
             onChange={handleChange}
           />
+<<<<<<< HEAD
         </div>
 
         <Form.Group>
@@ -137,6 +164,46 @@ function Signup() {
         <span>Already have an account? </span>
         <Link to="/login">Login</Link>
       </div>
+=======
+      </div>
+
+
+
+      <Form.Group>
+        
+        <Form.Control as="select">
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+          <option>Professional</option>
+        </Form.Control>
+      </Form.Group>
+      
+
+  <Button variant="warning" type="submit" onClick={handleSubmitClick}>
+    Submit
+  </Button>
+
+
+  </Form>
+
+  <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
+                {state.successMessage}
+            </div>
+            <div className="mt-2">
+                <span>Already have an account? </span>
+                <Link to="/login">Login</Link>
+ 
+            </div>
+
+    <br/> 
+    
+
+
+
+        </div>
+    </div>
+>>>>>>> main
 
       <br />
     </div>
