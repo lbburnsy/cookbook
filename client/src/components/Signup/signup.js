@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import "./signup.css"
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import Header from "../../components/Header/header";
 
 function Signup() {
     const [state , setState] = useState({
@@ -69,12 +69,13 @@ function Signup() {
       }
   }
     return(
-        <div className="container-fluid hero d-flex" style={{
+        <div className="container-fluid hero bk-board d-flex" style={{
             backgroundImage: `url(${process.env.PUBLIC_URL
                 + "/assets/pexels-ray-piedra-1565982.jpg"})`
           }}  >
         <div className="signup">
   <Form>
+    <Header title="Sign Up" />
       <div className="form-group text-left">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input type="email" 
@@ -134,7 +135,7 @@ function Signup() {
       </Form.Group>
       
 
-  <Button variant="warning" type="submit" onClick={handleSubmitClick}>
+  <Button className="submit-btn" variant="warning" type="submit" onClick={handleSubmitClick}>
     Submit
   </Button>
 
@@ -144,7 +145,7 @@ function Signup() {
   <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            <div className="mt-2">
+            <div className="mt-2 loginMessage">
                 <span>Already have an account? </span>
                 <Link to="/login">Login</Link>
  

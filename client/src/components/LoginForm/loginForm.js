@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/header";
 import "./loginForm.css"
 
 
@@ -55,12 +56,13 @@ function LoginForm() {
 //   }
 
   return(
-    <div className="container-fluid hero d-flex" style={{
+    <div className="container-fluid hero  bk-board d-flex" style={{
         backgroundImage: `url(${process.env.PUBLIC_URL
             + "/assets/pexels-ray-piedra-1565982.jpg"})`
       }}  >
     <div className="login">
          <Form>
+             <Header title="Login" />
              <div className="form-group text-left">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" 

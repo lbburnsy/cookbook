@@ -1,7 +1,7 @@
 
-.hero{
-    position: relative;
-    height: 600px;
+.bk-board{
+    position: absolute;
+    height: 100vh;
     overflow: hidden;
     background-size: cover;
     margin-bottom: 20px;
@@ -17,9 +17,7 @@
     box-shadow: 0 0 30px 9px rgb(83, 78, 70);
     
 }
-label {
-    color: black;
-}
+
 #username {
     background: #e7dcdc;
     width: 300px;
@@ -28,7 +26,10 @@ label {
     background: #e7dcdc;
     width: 300px;
 }
-select {
-    background: #e7dcdc;
-    width: 300px;
+.submit-btn {
+    margin-left: 66%;
+    width: 100px;
+}
+.loginMessage {
+    color: white;
 }
