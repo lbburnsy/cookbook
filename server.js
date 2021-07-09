@@ -8,10 +8,22 @@ const PORT = process.env.PORT || 3001;
 
 dotenv.config();
 
-mongoose.connect(process.env.DATABASE_ACCESS, () => console.log("Database connected"));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/cookbook',
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+
+});
+
+// if (process.env.NODE_ENV === "production") {
+    
+// }
 
 
 app.use(express.json())
 app.use(cors())
 app.use("/app", routesUrls)
+app.use(express.static("client/build"));
 app.listen(PORT, () =>  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`));
