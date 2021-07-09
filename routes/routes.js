@@ -10,22 +10,25 @@ router.post("/signup", async (request, response) => {
 
     const saltPassword = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(request.body.password, saltPassword)
-
+    await userCopy.syncIndexes();
+    
     const signedUpUser = new userCopy({
         email:request.body.email,
         username:request.body.username,
         abilityLevel:request.body.abilityLevel,
         password:securePassword,
     })
+    userCopy.create(signedUpUser)
     
-    signedUpUser.save()
+    //signedUpUser.save()
     .then(data => {
         response.json(data)
     })
     .catch(error => {
         response.json(error)
-    })
+    });
 });
+
 
 
 router.post("/addfavorite", async (request, response) => {

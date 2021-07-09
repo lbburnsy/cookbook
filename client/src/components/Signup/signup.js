@@ -59,13 +59,22 @@ class Signup extends Component {
 
     API.SignUp(registered).then((response) => {
       console.log(response.data);
-      this.props.setUserInfo({
-        userid: response.data._id,
-        email: response.data.email,
-        username: response.data.username,
-        password: response.data.password,
-        abilityLevel: response.data.abilityLevel,
-      });
+      if(response.data.name=="MongoError")
+      {
+        document.getElementById("errorItem").className="alert alert-warning";
+
+      }
+      else
+      {
+        this.props.setUserInfo({
+          userid: response.data._id,
+          email: response.data.email,
+          username: response.data.username,
+          password: response.data.password,
+          abilityLevel: response.data.abilityLevel,
+        });
+      }
+    
     });
 
     // window.location = "/profile"
@@ -74,6 +83,9 @@ class Signup extends Component {
   render() {
     return (
       <div className="container">
+         <div id="errorItem"  class="alert alert-warning d-none mb-3">
+          User already exists
+        </div>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
@@ -126,6 +138,7 @@ class Signup extends Component {
             Signup
           </Button>
         </Form>
+       
       </div>
     );
   }
