@@ -1,5 +1,5 @@
 import React from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
+// import { propTypes } from "react-bootstrap/esm/Image";
 import { Link } from "react-router-dom";
 import SearchBox from "../../components/SearchBox/searchBox"
 function Navbar(props){
@@ -28,11 +28,11 @@ function Navbar(props){
                         <span className="nav-link active" href="#">Recipes</span>
                         </li>
                     </Link>
-                    <Link to="/categories">
+                    {/* <Link to="/categories">
                         <li className="nav-item">
                         <span className="nav-link active" href="#">Categories</span>
                         </li>
-                    </Link>
+                    </Link> */}
                     <Link to="/signup">
                         <li className="nav-item">
                         <span className="nav-link active" href="#">Signup</span>
@@ -67,13 +67,8 @@ function Navbar(props){
                     <button className="btn btn-outline-light" type="submit">Search</button> */}
                 
                         </div>
-
                 </div>
-                
-                
-               
-                
-               
+                  
             </div>
         </nav>
        

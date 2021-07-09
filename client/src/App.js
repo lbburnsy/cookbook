@@ -15,7 +15,7 @@ import Basics from "./pages/Basics/basics";
 import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
 import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
-import CategoriesPage from "./pages/Categories/categories";
+// import CategoriesPage from "./pages/Categories/categories";
 import SignupPage from "./pages/SignupPage/signupPage";
 
 const filterItems = (name, value, data) => {
@@ -134,7 +134,7 @@ function App() {
         <Switch>
           <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} user={user} />}/>
           <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} user={user} />}/>
-          <Route path="/categories" component= { CategoriesPage }/>
+          {/* <Route path="/categories" component= { CategoriesPage }/> */}
           
           <Route path="/signup"  render= { () =><SignupPage user={user} setUserInfo={setUserInfo}/>}/>
           <Route path="/login" render= { () =><Login user={user} setUserInfo={setUserInfo}/>}/>
