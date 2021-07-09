@@ -134,7 +134,7 @@ function App() {
         <Switch>
           <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} user={user} />}/>
           <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} user={user} />}/>
-          <Route path="/categories" component= { CategoriesPage }/>
+          {/* <Route path="/categories" component= { CategoriesPage }/> */}
           
           <Route path="/signup"  render= { () =><SignupPage user={user} setUserInfo={setUserInfo}/>}/>
           <Route path="/login" render= { () =><Login user={user} setUserInfo={setUserInfo}/>}/>
