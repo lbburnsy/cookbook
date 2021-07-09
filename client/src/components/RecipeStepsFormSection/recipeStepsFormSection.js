@@ -14,9 +14,11 @@ export class RecipeStepsFormSection extends Component {
     render() {
         const  { values, handleChange } = this.props;
         return(
-            <div className="p-5 shadow-lg p-3 mb-5 bg-body rounded">
+            <div className="px-5 shadow-lg p-3 mb-5 bg-body rounded">
 
                 <Form className="form-width mt-5">
+
+                <h2 className="text-center">Steps</h2>
     
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label className="font">Directions</Form.Label>

@@ -66,7 +66,7 @@ class IngredientsList extends Component {
 
             <Row className="mb-3">
             <Form.Group as={Col} md="2" controlId="formGridState">
-            <Form.Label>Amount</Form.Label>
+            <Form.Label className="font">Amount</Form.Label>
             <Form.Control onChange={this.handleAddingIngredients('amount')} 
              as="select">
                 <option>0</option>
@@ -79,14 +79,24 @@ class IngredientsList extends Component {
                 <option>7</option>
                 <option>8</option>
                 <option>9</option>
-                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+
             </Form.Control>
             </Form.Group>
 
             <Form.Group as={Col} md="2" controlId="formGridState">
-            <Form.Label>Amount-1</Form.Label>
+            <Form.Label className="font">Amount-1</Form.Label>
             <Form.Control onChange={this.handleAddingIngredients('amount1')} 
             as="select">
+                <option>0</option>
                 <option>1/2</option>
                 <option>1/3</option>
                 <option>1/4</option>
@@ -97,9 +107,10 @@ class IngredientsList extends Component {
             </Form.Group>
 
             <Form.Group as={Col} md="2" controlId="formGridState">
-            <Form.Label>Unit</Form.Label>
+            <Form.Label className="font">Unit</Form.Label>
             <Form.Control onChange={this.handleAddingIngredients('unit')} 
              as="select">
+                <option>choose</option>
                 <option>Cup</option>
                 <option>g</option>
                 <option>fl oz</option>
@@ -136,7 +147,7 @@ class IngredientsList extends Component {
             </Form.Group>
 
             <Form.Group as={Col} md="6" controlId="formGridZip">
-            <Form.Label>Ingredient</Form.Label>
+            <Form.Label className="font">Ingredient</Form.Label>
             <Form.Control onChange={this.handleAddingIngredients('ingredient')} 
              />
             </Form.Group>

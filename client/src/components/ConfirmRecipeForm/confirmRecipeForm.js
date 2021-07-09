@@ -23,7 +23,7 @@ export class ConfirmRecipeForm extends Component {
             <div>
 
                 <Alert variant="success">
-                    <Alert.Heading>Confirm Your Recipe!</Alert.Heading>
+                    <Alert.Heading className="mb-4">Confirm Your Recipe!</Alert.Heading>
                     <ListGroup>
                         <ListGroup.Item text={ recipeName }>Recipe Name: { recipeName }</ListGroup.Item>
                         <ListGroup.Item text={ category }>Category: { category }</ListGroup.Item>

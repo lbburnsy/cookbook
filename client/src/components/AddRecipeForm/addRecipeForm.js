@@ -42,7 +42,6 @@ export class AddRecipeForm extends Component {
         this.setState({ [input]: event.target.value});
     };
 
-
     render() {
 
         const { step } = this.state;

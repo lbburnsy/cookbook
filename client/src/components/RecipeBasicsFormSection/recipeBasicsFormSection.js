@@ -13,11 +13,12 @@ export class RecipeBasicsFormSection extends Component {
     render() {
         const  { values, handleChange } = this.props;
         return(
-            <div className="p-5 shadow-lg p-3 mb-5 bg-body rounded">
+            <div className="px-5 shadow-lg p-3 mb-5 bg-body rounded">
 
-                <UploadImage />
+                {/* <UploadImage /> */}
 
                 <Form className="form-width mt-5">
+                    <h2 className="m-5 text-center">Basic Information</h2>
     
                     <Form.Group controlId="formBasicName">
                         <Form.Label className="font">Name Your Recipe</Form.Label>
@@ -58,6 +59,11 @@ export class RecipeBasicsFormSection extends Component {
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
                             </Form.Control>
                     </Form.Group>
 
@@ -70,6 +76,17 @@ export class RecipeBasicsFormSection extends Component {
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+
                         </Form.Control>
                         </Form.Group>
 
@@ -80,6 +97,16 @@ export class RecipeBasicsFormSection extends Component {
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                            <option>30</option>
+                            <option>35</option>
+                            <option>40</option>
+                            <option>45</option>
+                            <option>50</option>
+                            <option>55</option>
+
                         </Form.Control>
                         </Form.Group>
                     </Form.Row>
@@ -93,6 +120,16 @@ export class RecipeBasicsFormSection extends Component {
                             <option>0</option>
                             <option>1</option>
                             <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
                         </Form.Control>
                         </Form.Group>
 
@@ -103,6 +140,15 @@ export class RecipeBasicsFormSection extends Component {
                             <option>0</option>
                             <option>5</option>
                             <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                            <option>30</option>
+                            <option>35</option>
+                            <option>40</option>
+                            <option>45</option>
+                            <option>50</option>
+                            <option>55</option>
                         </Form.Control>
                         </Form.Group>
                     </Form.Row>
