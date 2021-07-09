@@ -33,6 +33,6 @@ export default {
     return axios.post("http://localhost:3001/app/signup", registered);
   },
   AddRecipe: function (recipe) {
-    axios.post("http://localhost:3001/app/addrecipe", recipe);
+    return axios.post("http://localhost:3001/app/addrecipe", recipe);
   },
 };

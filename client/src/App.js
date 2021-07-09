@@ -93,10 +93,17 @@ function App() {
   }
 
   function setUserInfo(userInfo) {
-    //console.log(userInfo);
+    
+    
    // user.id=userInfo.id;
     setUser(userInfo);
-    setTimeout(() => history.push("/profile"), 200)
+    console.log(userInfo);
+    if(userInfo && userInfo.userid && userInfo.userid!="")
+    {
+      console.log("I'm in the userinfo");
+      setTimeout(() => history.push("/profile"), 200)
+    }
+    
     //this.setState(({ user }) => ({ userInfo }));
   };
 
@@ -130,7 +137,7 @@ function App() {
   return (
     
       <div className="app">
-        <Navbar onSearch={onSearch} onText={onText} recipes={recipes} />
+        <Navbar onSearch={onSearch} onText={onText} recipes={recipes}  user={user}/>
         <Switch>
           <Route path="/" exact render= { () => <Home onRecipeClick={onRecipeClick} user={user} />}/>
           <Route path="/recipes" render= { () => <Recipes onRecipeClick={onRecipeClick} user={user} />}/>
@@ -138,6 +145,8 @@ function App() {
           
           <Route path="/signup"  render= { () =><SignupPage user={user} setUserInfo={setUserInfo}/>}/>
           <Route path="/login" render= { () =><Login user={user} setUserInfo={setUserInfo}/>}/>
+          <Route path="/logout" render= { () =>{setUser(initUser); window.location="/login";} }/>
+         
           <Route path="/profile" render= { () =><ProfilePage user={user} setUserInfo={setUserInfo}/>}/> 
           <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onRecipeClick={onRecipeClick} onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} user={user} />}/>
           <Route path="/recipedetailspage" render= { () => <RecipeDetailsPage recipe={recipe} />}/>

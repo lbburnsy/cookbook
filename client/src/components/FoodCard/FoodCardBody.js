@@ -5,10 +5,11 @@ import Favorite from "../Favorite/favorite";
 
 function FoodCardBody(props) {
   return (  
-    
-    <div className={props.itemColClass} onClick={(e) => props.onRecipeClick(e, props.recipe)}>
+    <div className={props.itemColClass}>
+    <Favorite user={props.user} recipeId={props.recipeId} />
+    <div  onClick={(e) => props.onRecipeClick(e, props.recipe)}>
        {/* <Favorite id={props.id} /> */}
-      <Favorite user={props.user} recipeId={props.recipeId} />
+     
       <div className="card border-0" >
         <img
           src={props.img?props.img:'/assets/breakfast.jpg' }
@@ -21,6 +22,7 @@ function FoodCardBody(props) {
           <h5 className="card-title">{props.name}</h5>
         </a>
       </div>
+    </div>
     </div>
   );
 }
