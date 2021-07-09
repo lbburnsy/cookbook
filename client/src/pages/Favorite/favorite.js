@@ -21,7 +21,7 @@ function Favorite(props) {
       .catch((err) => console.log(err));
   }
    const getFavoriteRecipes=(recipeslocal)=> {
-    axios.post("http://localhost:3001/app/getfavorites", {userId:props.user.userid})
+    axios.post("https://infinite-citadel-91130.herokuapp.com/app/getfavorites", {userId:props.user.userid})
     .then(response =>{ 
         const allRecipes=[];
         const favoriteRecipes=Array.from(response.data);

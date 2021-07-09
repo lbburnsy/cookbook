@@ -12,7 +12,7 @@ function Cookbook(props) {
         getAllCookbookRecipes();
    }, []);
    const getAllCookbookRecipes=()=> {
-    axios.post("http://localhost:3001/app/getrecipes", {userId:props.user.userid})
+    axios.post("https://infinite-citadel-91130.herokuapp.com/app/getrecipes", {userId:props.user.userid})
     .then(response =>{ 
         const allRecipes=response.data;
         getCookbookRecipes(allRecipes);

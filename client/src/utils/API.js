@@ -28,12 +28,12 @@ export default {
     return axios.post("https://infinite-citadel-91130.herokuapp.com"+"/app/addfavorite", favorite);
   },
   Login: function (payload) {
-    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/login", payload);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"/app/login", payload);
   },
   SignUp: function (registered) {
-    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/signup", registered);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"/app/signup", registered);
   },
   AddRecipe: function (recipe) {
-    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/addrecipe", recipe);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"/app/addrecipe", recipe);
   },
 };
