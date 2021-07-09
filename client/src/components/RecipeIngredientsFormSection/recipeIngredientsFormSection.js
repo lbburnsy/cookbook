@@ -28,13 +28,14 @@ export class RecipeIngredientsFormSection extends Component {
             
                 <Form className="form-width">
                    
-        
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                             Go Back
                     </Button>
                     <Button  className="m-2"variant="primary" type="continue" onClick={this.continue}>
                             Continue
                     </Button>
+                    </div>
                 </Form>
 
             

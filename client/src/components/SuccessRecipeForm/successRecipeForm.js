@@ -49,9 +49,12 @@ export class SuccessRecipeForm extends Component {
             </Alert>
     
     {/* This needs to be handled so that it can save the recipe as a final step, i am commenting it out now becuse once i click it, it causes an error */}
+    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+
             <Button className="m-2" variant="primary" type="confirm" onClick={(e) => this.insertRecipe(0,e, this.props.values,this.props.user.userid)}>
-                            Finish
+                            Done and view cookbook
             </Button>
+            </div>
     
             </div>
         )

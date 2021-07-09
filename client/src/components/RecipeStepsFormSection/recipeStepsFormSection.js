@@ -25,12 +25,14 @@ export class RecipeStepsFormSection extends Component {
                         <Form.Control onChange={handleChange('directions')}
                         defaultValue={values.directions} as="textarea" rows={10} />
                     </Form.Group>
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back
                     </Button>
                     <Button className="m-2" variant="primary" type="continue" onClick={this.continue}>
                         Continue
                     </Button>
+                    </div>
                 </Form>
 
 
