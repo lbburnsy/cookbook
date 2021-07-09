@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import "./recipeDetailsBody.css"
 function RecipeDetailsBody(props) {
     return(
         <div className="RecipeDetailSideBar">
-           <Card>
+           <Card style= {{border:'none'}}>
             <Card.Body>
-                <Card.Title>Ingredients</Card.Title>
+                <Card.Title className="fontStyle">Ingredients</Card.Title>
                 <Card.Text>
                 <ol>
                     {props?.recipe?.ingredients?.map((ingredient, index) => {
@@ -17,7 +18,7 @@ function RecipeDetailsBody(props) {
             
             
 
-            <Card.Title>Directions</Card.Title>
+            <Card.Title className="fontStyle">Directions</Card.Title>
                 <Card.Text>
                 <ol>
                 {props?.recipe?.instructions?.map((instruction, index) => {
