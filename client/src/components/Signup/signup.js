@@ -61,13 +61,22 @@ class Signup extends Component {
 
     API.SignUp(registered).then((response) => {
       console.log(response.data);
-      this.props.setUserInfo({
-        userid: response.data._id,
-        email: response.data.email,
-        username: response.data.username,
-        password: response.data.password,
-        abilityLevel: response.data.abilityLevel,
-      });
+      if(response.data.name=="MongoError")
+      {
+        document.getElementById("errorItem").className="alert alert-warning";
+
+      }
+      else
+      {
+        this.props.setUserInfo({
+          userid: response.data._id,
+          email: response.data.email,
+          username: response.data.username,
+          password: response.data.password,
+          abilityLevel: response.data.abilityLevel,
+        });
+      }
+    
     });
 
     // window.location = "/profile"
@@ -75,11 +84,14 @@ class Signup extends Component {
 
   render() {
     return (
+
+
     <div className="container-fluid hero bk-board d-flex" style={{
             backgroundImage: `url(${process.env.PUBLIC_URL
                 + "/assets/pexels-ray-piedra-1565982.jpg"})`
           }}  >
       <div className="container" id="signup">
+
         <Form onSubmit={this.onSubmit}>
         <Header title="Sign Up" />
           <Form.Group controlId="formBasicUsername">
@@ -133,6 +145,7 @@ class Signup extends Component {
             Signup
           </Button>
         </Form>
+       
       </div>
     </div>
     );

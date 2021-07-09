@@ -1,39 +1,9 @@
-POST http://localhost:3001/app/addgeneralRecipe
+POST http://localhost:3001/app/signup
 Content-Type: application/json
 
-  {
-      "recipeId":"5",
-      "name": "Cheesy cauliflower pizza with shaved asparagus",
-      "image":
-        "https://images.kitchenstories.io/wagtailOriginalImages/R2336-photo-final-2.jpg",
-      "category": "dinner",
-      "cuisine": "italian",
-      "prep": "35 min.",
-      "cook": "40 min.",
-      "ingredients": [
-        "750 g cauliflower",
-        "6 stalks green asparagus",
-        "100 g Parmesan cheese",
-        "70 g shredded mozzarella cheese",
-        "50 g shredded Gouda cheese",
-        "100 g crème fraîche",
-        "1 clove garlic",
-        "6 cherry tomatoes",
-        "3 stalks parsley",
-        "2 eggs",
-        "½ tsp dried oregano",
-        "1 pinch ground nutmeg",
-        "2 tbsp sunflower seeds",
-        "salt",
-        "pepper",
-        "flaky sea salt (for garnish)"
-      ],
-      "directions": [
-        "Cut the cauliflower into florets. Add to a pot with boiling salted water and let simmer for approx. 5 min. or until fork tender. Let drain and return cauliflower to the stove over medium-low heat. Leave for approx. 5 min, stirring occasionally to let the steam out completely. Transfer to a baking sheet, spread out and leave to cool.",
-        "Coarsely grate the Parmesan, chop the garlic, and halve the cherry tomatoes. Finely chop the parsley. Cut off the woody ends of the green asparagus, then use a vegetable peeler to carefully shave long lengths of asparagus.",
-        "Mix the garlic, crème fraîche, one-third of the Parmesan, mozzarella, gouda, salt, and pepper in a bowl and set aside. Add cauliflower to a food processor and process until fine, but still with some texture. Now add cauliflower to a kitchen towel set over a bowl and tightly squeeze it out to release any extra liquid. Mix together in a bowl with two-thirds of the Parmesan, 2 eggs, oregano, nutmeg, salt, and pepper.",
-        "Preheat the oven to 220°C/425F°. Spread the cauliflower mixture on a baking sheet lined with parchment paper. Press down with your hands to create the pizza crust. Transfer to the oven and bake for approx. 20 – 25 min., or until golden brown. Remove and let cool for approx. 15 min.",
-        "Spread cheese sauce over the pizza base. Now arrange shaved asparagus on top, add halved cherry tomatoes and sprinkle with sunflower seeds. Return to the oven and bake for approx. 15 min. more. Garnish with parsley and flaky sea salt before serving and enjoy!"
-      ],
-      "servings": "2"
-    }
+{
+  "email": "noha_ashraf85@hotmail.com",
+  "username": "Noha Ashraf",
+  "abilityLevel": "Beginner",
+  "password": "12345678"
+}

@@ -7,7 +7,7 @@ const recipe = new mongoose.Schema({
     userId: {
         type: String
     },
-    name: {
+    recipeName: {
         type: String,
         required: true,
       },
@@ -27,22 +27,35 @@ const recipe = new mongoose.Schema({
         default: "",
       },
       // Time to prepare the recipe
-      prep: {
+      prepTimeHours: {
         type: String,
         default: "",
       },
+        // Time to prepare the recipe
+        prepTimeMinutes: {
+          type: String,
+          default: "",
+        },
       // Time to cook the recipe
-      cook: {
+      cookingTimeHours: {
+        type: String,
+        default: "",
+      },
+      cookingTimeMinutes: {
         type: String,
         default: "",
       },
       // Ingredients used in the recipe
       ingredients: [String],
       // Directions for the recipe
-      directions: [String],
+      directions: {
+        type: String,
+        default: "",
+      },
+      
       // Serving Size
       servings: {
-        type: Number,
+        type: String,
       },
       // Current date when recipe was posted
       dateAdded: {

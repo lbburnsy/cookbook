@@ -15,7 +15,7 @@ export class SuccessRecipeForm extends Component {
     insertRecipe(id,e,values,userId)
     {
         e.preventDefault();
-        console.log("Im successfull");
+        console.log(values);
         const recipe = {
             userId:userId,
             recipeName:values.recipeName,
@@ -31,7 +31,7 @@ export class SuccessRecipeForm extends Component {
           
         }
 
-        API.addRecipe(recipe)
+        API.AddRecipe(recipe)
         .then(response =>{ console.log(response.data);  })
         
 

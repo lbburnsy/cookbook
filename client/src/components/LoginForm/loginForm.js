@@ -34,7 +34,11 @@ function LoginForm(props) {
                 email: response.data.email,
             username:  response.data.username,
             password:  response.data.password,
-            abilityLevel:  response.data.abilityLevel}) })
+            abilityLevel:  response.data.abilityLevel}) 
+            document.getElementById("errorItem").className="alert alert-warning";
+
+        })
+          
         
     //   axios.post(API_BASE_URL+'/user/login', payload)
     //       .then(function (response) {
@@ -70,6 +74,9 @@ function LoginForm(props) {
             + "/assets/pexels-ray-piedra-1565982.jpg"})`
       }}  >
     <div className="login">
+    <div id="errorItem"  class="alert alert-warning d-none mb-3">
+         Username or password is incorrect
+        </div>
          <Form>
              <Header title="Login" />
              <div className="form-group text-left">

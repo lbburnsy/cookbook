@@ -3,6 +3,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "../../components/SearchBox/searchBox"
 function Navbar(props){
+
+    const isLoggedIn = props.user && props.user.userid && props.user.userid!="";
+    let signup;
+    let profile;
+    let login;
+    if (isLoggedIn) {
+        signup = "";
+        login= <Link to="/logout">
+        <li className="nav-item">
+        <span className="nav-link active" href="#">Logout</span>
+        </li>
+    </Link>
+        profile=  <Link to="/profile">
+        <li className="nav-item">
+        <span className="nav-link active" href="#">Profile</span>
+        </li>
+    </Link>
+    } else {
+        profile="";
+        signup = <Link to="/signup">
+      <li className="nav-item">
+      <span className="nav-link active" href="#">Signup</span>
+      </li>
+      
+  </Link>
+  login= <Link to="/login">
+  <li className="nav-item">
+  <span className="nav-link active" href="#">Login</span>
+  </li>
+</Link>
+    }
+  
     return(
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <div className="container-fluid">
@@ -33,21 +65,13 @@ function Navbar(props){
                         <span className="nav-link active" href="#">Categories</span>
                         </li>
                     </Link> */}
-                    <Link to="/signup">
-                        <li className="nav-item">
-                        <span className="nav-link active" href="#">Signup</span>
-                        </li>
-                    </Link>
-                    <Link to="/login">
-                        <li className="nav-item">
-                        <span className="nav-link active" href="#">Login</span>
-                        </li>
-                    </Link>
-                    <Link to="/profile">
-                        <li className="nav-item">
-                        <span className="nav-link active" href="#">Profile</span>
-                        </li>
-                    </Link>
+
+                   
+                    {signup}
+                    {login}
+                   
+                    {profile}
+                  
                     <Link to="/recipesearchresults">
                         <li className="nav-item">
                         <span className="nav-link active" aria-current="page" href="#">Recipe Search Results</span>

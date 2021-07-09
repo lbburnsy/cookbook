@@ -34,13 +34,23 @@ export class  Favorite extends Component {
             //    this.setState({[this.state.amount]:""});
     };
     render() {
-        const { props } = this.props;
+       // const { props } = this.props;
+        const isLoggedIn = this.props.user && this.props.user.userid && this.props.user.userid!="";
+        let favButton;
+        if (isLoggedIn) {
+            favButton= <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(this.props.recipeId, e)}></i>
+    
+        }
+        else
+        {
+            favButton="";
+        }
+        
     return(
         <>
-        
+        {favButton}
             {/* <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(prop.id, e)}></i> */}
-            <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(this.props.recipeId, e)}></i>
-        </>
+               </>
 
     )
     }
