@@ -65,6 +65,7 @@ function Navbar(props){
                         <span className="nav-link active" href="#">Categories</span>
                         </li>
                     </Link> */}
+
                    
                     {signup}
                     {login}
