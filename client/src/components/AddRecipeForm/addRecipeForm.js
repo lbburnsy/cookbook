@@ -44,6 +44,7 @@ export class AddRecipeForm extends Component {
 
 
     render() {
+
         const { step } = this.state;
         const { recipeName, category, cuisine, prepTimeHours, prepTimeMinutes, cookingTimeHours, cookingTimeMinutes, ingredients, directions, servings } = this.state;
         const values = { recipeName, category, cuisine, prepTimeHours, prepTimeMinutes, cookingTimeHours, cookingTimeMinutes, ingredients, directions, servings };
@@ -81,7 +82,7 @@ export class AddRecipeForm extends Component {
                 )
             case 5:
                 return (
-                    <SuccessRecipeForm />
+                    <SuccessRecipeForm  values = {values} user={this.props.user} />
                 )
 
         }

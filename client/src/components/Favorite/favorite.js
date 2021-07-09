@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./favorite.css";
+import axios from 'axios'
+import API from "../../utils/API";
 
 export class  Favorite extends Component {
-    addtoFavorite(id,e) {
+    addtoFavorite(recipeId,e) {
         e.preventDefault();
         console.log("I'm in add to Favorite event");
         console.log(e);
@@ -12,6 +14,15 @@ export class  Favorite extends Component {
         // console.log(amount1);
         // console.log(unit);
         // console.log(ingredient);
+        const favorite={
+            recipeId:recipeId,
+            userid:this.props.user.userid
+
+        }
+        API.addtoFavorite(favorite)
+        .then(response =>{ console.log(response.data);  })
+        
+        console.log("I'v finished posting favorite");
 
 
             // this.props.values.ingredients.push({Amount: this.state.amount,
@@ -23,11 +34,12 @@ export class  Favorite extends Component {
             //    this.setState({[this.state.amount]:""});
     };
     render() {
-        const { prop } = this.props;
+        const { props } = this.props;
     return(
         <>
+        
             {/* <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(prop.id, e)}></i> */}
-            <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(0, e)}></i>
+            <i className="fa fa-heart" onClick={(e) => this.addtoFavorite(this.props.recipeId, e)}></i>
         </>
 
     )

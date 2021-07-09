@@ -40,7 +40,7 @@ const resetText = () => {
            
                 <SearchBar 
                 id= "hello"
-                caseInsensitive = {true}
+                // caseInsensitive = {true}
                 // ^ this prop does not work
                 onSearchTextChange={props.onText}
                 // everytime you type a letter a change is triggred only in filter component
