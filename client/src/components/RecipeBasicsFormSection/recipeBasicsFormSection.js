@@ -13,7 +13,7 @@ export class RecipeBasicsFormSection extends Component {
     render() {
         const  { values, handleChange } = this.props;
         return(
-            <div>
+            <div className="p-5 shadow-lg p-3 mb-5 bg-body rounded">
 
                 <UploadImage />
 

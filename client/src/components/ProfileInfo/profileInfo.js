@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import "./profileInfo.css";
 
-function ProfileInfo() {
+function ProfileInfo(props) {
     return(
         <>
             <Col xs={12} md={3}>
@@ -11,7 +11,7 @@ function ProfileInfo() {
             </Col>
             <Col xs={12} md={4}>
                 {/* the name in h3 needs to be dynamic */}
-                <h3>Noha Ashraf</h3>
+                <h3>{props.user.username}</h3>
                 <p>Welcome to your profile</p>  
             </Col>
         </>

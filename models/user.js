@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const user = new mongoose.Schema({
   // Email
   email: {
     type: String,
@@ -24,6 +23,4 @@ const userSchema = new Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+module.exports = mongoose.model("cookbook", user);

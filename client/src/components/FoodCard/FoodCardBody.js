@@ -8,10 +8,10 @@ function FoodCardBody(props) {
     
     <div className={props.itemColClass} onClick={(e) => props.onRecipeClick(e, props.recipe)}>
        {/* <Favorite id={props.id} /> */}
-      <Favorite  />
+      <Favorite user={props.user} recipeId={props.recipeId} />
       <div className="card border-0" >
         <img
-          src={props.img}
+          src={props.img?props.img:'/assets/breakfast.jpg' }
           className="card-img-top"
           alt={props.name}>
           </img>

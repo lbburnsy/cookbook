@@ -6,17 +6,17 @@ import { AddRecipeForm } from "../../components/AddRecipeForm/addRecipeForm";
 
 
 
-function Addrecipe() {
+function Addrecipe(props) {
     return(
         <div className="container mt-5">
         <div className="row">
-            <ProfileInfo />
+            <ProfileInfo user={props.user}/>
         </div>
         <div className="row">
             <ProfileMainNav />
         </div>
         <div className="row flex-column">
-         <AddRecipeForm />
+         <AddRecipeForm user={props.user} />
         </div>
     </div>
     )

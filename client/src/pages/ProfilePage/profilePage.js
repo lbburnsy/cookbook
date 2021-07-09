@@ -2,13 +2,13 @@ import React from "react";
 import ProfileMainNav from "../../components/ProfileMainNav/profileMainNav";
 import ProfileInfo from "../../components/ProfileInfo/profileInfo";
 
-function ProfilePage() {
+function ProfilePage(props) {
     return(
         <>
 
         <div className="container mt-5">
             <div className="row">
-            <ProfileInfo />
+            <ProfileInfo user={props.user}/>
             </div>
             <div className="row">
             <ProfileMainNav />
