@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button'
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/header";
+import API from "../../utils/API";
 import "./loginForm.css"
 
-
-function LoginForm() {
+function LoginForm(props) {
   const [state , setState] = useState({
       email : "",
       password : "",
@@ -27,6 +27,15 @@ function LoginForm() {
           "email":state.email,
           "password":state.password,
       }
+
+     API.Login(payload)
+        .then(response =>{ console.log(response.data); props.setUserInfo(
+            {userid:response.data._id, 
+                email: response.data.email,
+            username:  response.data.username,
+            password:  response.data.password,
+            abilityLevel:  response.data.abilityLevel}) })
+        
     //   axios.post(API_BASE_URL+'/user/login', payload)
     //       .then(function (response) {
     //           if(response.status === 200){
@@ -73,6 +82,7 @@ function LoginForm() {
                      value={state.email}
                      onChange={handleChange}
               />
+              <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div className="form-group text-left">
               <label htmlFor="exampleInputPassword1">Password</label>
@@ -86,7 +96,7 @@ function LoginForm() {
               </div>
               <div className="form-check">
               </div>
-              <Button variant="warning" type="submit" className="sub-btn" onClick={handleSubmitClick}>
+              <Button className= "sub-btn" variant="warning" type="submit" onClick={handleSubmitClick}>
                   Submit
               </Button>
           </Form>
@@ -94,12 +104,12 @@ function LoginForm() {
               {state.successMessage}
           </div>
           <div className="signupMessage">
-              <span>Don't have an account? </span>
+              <span>Dont have an account? </span>
               <Link to="/signup">Signup</Link>
  
           </div>
       </div>
-      </div>
+    </div>
   )
 }
 

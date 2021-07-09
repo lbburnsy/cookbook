@@ -1,168 +1,142 @@
-import React, {useState} from 'react';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import "./signup.css"
-import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+// import { useState } from "react";
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import axios from "axios";
+import API from "../../utils/API";
 import Header from "../../components/Header/header";
+import "./signup.css";
 
-function Signup() {
-    const [state , setState] = useState({
-        email : "",
-        username : "",
-        password : "",
-        confirmPassword: "",
-        successMessage: null
+class Signup extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      username: "",
+      password: "",
+      abilityLevel: "",
+      id: "",
+    };
 
-    })
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
-
-    const sendDetailsToServer = () => {
-      if(state.email.length && state.username && state.password.length) {
-          // props.showError(null);
-          const payload={
-              "email":state.email,
-              "username":state.username,
-              "password":state.password,
-          }
-        //   axios.post(API_BASE_URL+'/user/signup', payload)
-        //       .then(function (response) {
-        //           if(response.status === 200){
-        //               setState(prevState => ({
-        //                   ...prevState,
-        //                   'successMessage' : 'Signup successful. Redirecting to home page..'
-        //               }))
-        //               localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
-        //               redirectToHome();
-        //               // props.showError(null)
-        //           } else{
-        //               // props.showError("Some error ocurred"); 
-        //           }
-        //       })
-              .catch(function (error) {
-                  console.log(error);
-              });    
-      } else {
-          // props.showError('Please enter valid email, username, and password')    
-      }
-      
-    }
-
-    const redirectToHome = () => {
-      // props.updateTitle('Home')
-      // props.history.push('/home');
+    this.changeUsername = this.changeUsername.bind(this);
+    this.changeEmail = this.changeEmail.bind(this);
+    this.changePassword = this.changePassword.bind(this);
+    this.changeAbilityLevel = this.changeAbilityLevel.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-    
-    const handleSubmitClick = (e) => {
-      e.preventDefault();
-      if(state.password === state.confirmPassword) {
-          sendDetailsToServer()    
-      } else {
-          // props.showError('Passwords do not match');
-      }
+  changeUsername(event) {
+    this.setState({
+      username: event.target.value,
+    });
   }
-    return(
-        <div className="container-fluid hero bk-board d-flex" style={{
+
+  changeEmail(event) {
+    this.setState({
+      email: event.target.value,
+    });
+  }
+
+  changePassword(event) {
+    this.setState({
+      password: event.target.value,
+    });
+  }
+
+  changeAbilityLevel(event) {
+    this.setState({
+      abilityLevel: event.target.value,
+    });
+  }
+
+  onSubmit(event) {
+    event.preventDefault();
+
+    const registered = {
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password,
+      abilityLevel: this.state.abilityLevel,
+    };
+
+    API.SignUp(registered).then((response) => {
+      console.log(response.data);
+      this.props.setUserInfo({
+        userid: response.data._id,
+        email: response.data.email,
+        username: response.data.username,
+        password: response.data.password,
+        abilityLevel: response.data.abilityLevel,
+      });
+    });
+
+    // window.location = "/profile"
+  }
+
+  render() {
+    return (
+    <div className="container-fluid hero bk-board d-flex" style={{
             backgroundImage: `url(${process.env.PUBLIC_URL
                 + "/assets/pexels-ray-piedra-1565982.jpg"})`
           }}  >
-        <div className="signup">
-  <Form>
-    <Header title="Sign Up" />
-      <div className="form-group text-left">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input type="email" 
-              className="form-control" 
-              id="email" 
-              aria-describedby="emailHelp" 
-              placeholder="Enter email"
-              value={state.email}
-              onChange={handleChange}
-          />
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-
-      <div className="form-group text-left">
-          <label htmlFor="exampleInputUsername">Username</label>
-          <input type="username" 
-              className="form-control" 
-              id="username" 
+      <div className="container" id="signup">
+        <Form onSubmit={this.onSubmit}>
+        <Header title="Sign Up" />
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
               placeholder="Username"
-              value={state.username}
-              onChange={handleChange}
-           />
-      </div>
-
-      <div className="form-group text-left">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" 
-            className="form-control" 
-            id="password" 
-            placeholder="Password"
-            value={state.password}
-            onChange={handleChange}
+              onChange={this.changeUsername}
+              vlaue={this.state.username}
             />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              onChange={this.changeEmail}
+              vlaue={this.state.email}
+            />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={this.changePassword}
+              vlaue={this.state.password}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Ability Level</Form.Label>
+            <Form.Control
+              as="select"
+              onChange={this.changeAbilityLevel}
+              vlaue={this.state.abilityLevel}
+            >
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+              <option>Professional</option>
+            </Form.Control>
+          </Form.Group>
+
+          <Button className="submit-btn" variant="warning" type="submit" value="submit">
+            Signup
+          </Button>
+        </Form>
       </div>
-
-      <div className="form-group text-left">
-          <label htmlFor="exampleInputPassword1">Confirm Password</label>          
-          <input type="password" 
-            className="form-control" 
-            id="confirmPassword" 
-            placeholder="Confirm Password"
-            value={state.confirmPassword}
-            onChange={handleChange}
-          />
-      </div>
-
-
-
-      <Form.Group>
-        
-        <Form.Control as="select">
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-          <option>Professional</option>
-        </Form.Control>
-      </Form.Group>
-      
-
-  <Button className="submit-btn" variant="warning" type="submit" onClick={handleSubmitClick}>
-    Submit
-  </Button>
-
-
-  </Form>
-
-  <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
-                {state.successMessage}
-            </div>
-            <div className="mt-2 loginMessage">
-                <span>Already have an account? </span>
-                <Link to="/login">Login</Link>
- 
-            </div>
-
-    <br/> 
-    
-
-
-
-        </div>
     </div>
-
-
-    )
+    );
+  }
 }
 
-
-
-export default withRouter(Signup);
+export default Signup;

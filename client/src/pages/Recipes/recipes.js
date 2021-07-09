@@ -22,7 +22,7 @@ function Recipes(props) {
   return (
     <div className="recipes">
       <Header title="Recipes"/>
-      <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} />
+      <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={recipes} itemColClass={"col-lg-3 col-md-3 col-sm-12"} user={props.user} />
     </div>
   );
 }

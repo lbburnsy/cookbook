@@ -18,7 +18,7 @@ function RecipeSearchResults(props) {
       <Filter className="filterComponent" onChange={props.onFilterChange} filter={props.filter}/>
       </div>
       <div className="col-12 col-md-8">
-      <FoodCardContainer className="recipeCards" onRecipeClick={props.onRecipeClick} recipes={props.recipes} itemColClass={"col-12 col-md-4"}/>
+      <FoodCardContainer className="recipeCards" onRecipeClick={props.onRecipeClick} recipes={props.recipes} user={props.user} itemColClass={"col-12 col-md-4"}/>
     </div>
     </div>
       </div>

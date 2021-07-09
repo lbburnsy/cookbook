@@ -19,7 +19,7 @@ export class RecipeIngredientsFormSection extends Component {
         const { values, handleChange } = this.props;
         
         return(
-            <div>
+            <div className="p-5 shadow-lg p-3 mb-5 bg-body rounded">
 
                 <IngredientsList handleChange = {handleChange}
                         values = {values} />
