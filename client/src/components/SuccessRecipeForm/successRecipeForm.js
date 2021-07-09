@@ -32,7 +32,6 @@ export class SuccessRecipeForm extends Component {
             servings :values.servings
           
         }
-        
         this.props.history.push('/cookbook');
         
 
