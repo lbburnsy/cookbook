@@ -3,8 +3,10 @@ import { Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import API from "../../utils/API";
 import axios from 'axios'
+import {  Switch, Route, useHistory } from "react-router-dom";
 
 export class SuccessRecipeForm extends Component {
+    
     continue = event => {
         event.preventDefault();
        console.log("Im successfull");
@@ -30,7 +32,9 @@ export class SuccessRecipeForm extends Component {
             servings :values.servings
           
         }
-        window.location = "/cookbook"
+        
+        this.props.history.push('/cookbook');
+        
 
         API.AddRecipe(recipe)
         .then(response =>{ console.log(response.data);  })
