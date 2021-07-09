@@ -81,7 +81,7 @@ export class AddRecipeForm extends Component {
                 )
             case 5:
                 return (
-                    <SuccessRecipeForm  values = {values} user={this.props.user} />
+                    <SuccessRecipeForm  values = {values} user={this.props.user} history={this.props.history} />
                 )
 
         }

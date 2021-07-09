@@ -16,7 +16,7 @@ function Addrecipe(props) {
             <ProfileMainNav />
         </div>
         <div className="row flex-column">
-         <AddRecipeForm user={props.user} />
+         <AddRecipeForm user={props.user} history={props.history} />
         </div>
     </div>
     )
