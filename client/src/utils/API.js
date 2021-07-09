@@ -1,9 +1,10 @@
 import axios from "axios";
 
 export default {
+  
   // Gets all recipes
   getRecipes: function () {
-    return axios.get("http://localhost:3001/app/getgeneralRecipes");
+    return axios.get("https://infinite-citadel-91130.herokuapp.com"+"/app/getgeneralRecipes");
   },
   // // Gets the recipe with the given id
   // getRecipe: function(id) {
@@ -24,15 +25,15 @@ export default {
   // },
 
   addtoFavorite: function (favorite) {
-    return axios.post("http://localhost:3001/app/addfavorite", favorite);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"/app/addfavorite", favorite);
   },
   Login: function (payload) {
-    return axios.post("http://localhost:3001/app/login", payload);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/login", payload);
   },
   SignUp: function (registered) {
-    return axios.post("http://localhost:3001/app/signup", registered);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/signup", registered);
   },
   AddRecipe: function (recipe) {
-    return axios.post("http://localhost:3001/app/addrecipe", recipe);
+    return axios.post("https://infinite-citadel-91130.herokuapp.com"+"app/addrecipe", recipe);
   },
 };
