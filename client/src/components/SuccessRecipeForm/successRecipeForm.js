@@ -30,6 +30,7 @@ export class SuccessRecipeForm extends Component {
             servings :values.servings
           
         }
+        window.location = "/cookbook"
 
         API.AddRecipe(recipe)
         .then(response =>{ console.log(response.data);  })
@@ -50,7 +51,7 @@ export class SuccessRecipeForm extends Component {
     {/* This needs to be handled so that it can save the recipe as a final step, i am commenting it out now becuse once i click it, it causes an error */}
             <Button className="m-2" variant="primary" type="confirm" onClick={(e) => this.insertRecipe(0,e, this.props.values,this.props.user.userid)}>
                             Finish
-                    </Button>
+            </Button>
     
             </div>
         )
