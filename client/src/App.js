@@ -15,7 +15,7 @@ import Basics from "./pages/Basics/basics";
 import Ingredients from "./pages/Ingredients/ingredients";
 import RecipeSteps from "./pages/RecipeSteps/recipesteps";
 import RecipeDetailsPage from "./pages/RecipeDetailsPage/recipeDetailsPage";
-import CategoriesPage from "./pages/Categories/categories";
+// import CategoriesPage from "./pages/Categories/categories";
 import SignupPage from "./pages/SignupPage/signupPage";
 
 const filterItems = (name, value, data) => {
