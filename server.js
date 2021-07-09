@@ -17,12 +17,13 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/cookbook',
 
 });
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+    
+// }
 
 
 app.use(express.json())
 app.use(cors())
 app.use("/app", routesUrls)
+app.use(express.static("client/build"));
 app.listen(PORT, () =>  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`));
