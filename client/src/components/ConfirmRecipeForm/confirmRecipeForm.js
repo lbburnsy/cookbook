@@ -38,6 +38,7 @@ export class ConfirmRecipeForm extends Component {
                     
                 </Alert>
 
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                 <Button className="m-2" variant="primary" type="back" onClick={this.back}>
                         Go Back
                 </Button>
@@ -45,6 +46,7 @@ export class ConfirmRecipeForm extends Component {
                 <Button className="m-2" variant="primary" type="confirm" onClick={this.continue}>
                         Confirm
                 </Button>
+                </div>
                
                 
             </div>               

@@ -152,10 +152,11 @@ export class RecipeBasicsFormSection extends Component {
                         </Form.Control>
                         </Form.Group>
                     </Form.Row>
-
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <Button className="m-2" variant="primary" type="continue" onClick={this.continue}>
                         Continue
                     </Button>
+                    </div>
                 </Form>
 
 
