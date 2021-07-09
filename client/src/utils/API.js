@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   // Gets all recipes
-  getRecipes: function() {
+  getRecipes: function () {
     return axios.get("http://localhost:3001/app/getgeneralRecipes");
   },
   // // Gets the recipe with the given id
@@ -23,20 +23,16 @@ export default {
   //   return axios.get("/api/user");
   // },
 
-  addtoFavorite: function(favorite) {
-    return  axios.post("http://localhost:3001/app/addfavorite", favorite);
-
+  addtoFavorite: function (favorite) {
+    return axios.post("http://localhost:3001/app/addfavorite", favorite);
   },
-  Login: function(payload) {
-    return  axios.post("http://localhost:3001/app/login", payload);
-
+  Login: function (payload) {
+    return axios.post("http://localhost:3001/app/login", payload);
   },
-  SignUp: function(registered) {
-    return   axios.post("http://localhost:3001/app/signup", registered);
-
+  SignUp: function (registered) {
+    return axios.post("http://localhost:3001/app/signup", registered);
   },
-  AddRecipe:function(recipe)
-  {
+  AddRecipe: function (recipe) {
     axios.post("http://localhost:3001/app/addrecipe", recipe);
-  }
+  },
 };
