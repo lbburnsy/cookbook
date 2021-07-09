@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 3001;
 
 dotenv.config();
 
-mongoose.connect(process.env.DATABASE_ACCESS, () => console.log("Database connected"));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/cookbook',
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 
 app.use(express.json())
