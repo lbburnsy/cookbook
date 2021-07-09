@@ -30,7 +30,7 @@ function Home(props) {
       {/* {recipes.slice(0, 4).map((recipe) => (
         <FoodCard img={recipe.image} name={recipe.name} id={recipe.id} />
       ))} */}
-      <ShowMoreButton more="/recipes" title="Recipes" />
+      <ShowMoreButton more="/recipes" title="Recipes" /> 
       
     </div>
   );
