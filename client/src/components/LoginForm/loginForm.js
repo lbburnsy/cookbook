@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/header";
 import API from "../../utils/API";
 import "./loginForm.css"
 
@@ -68,12 +69,17 @@ function LoginForm(props) {
 //   }
 
   return(
-      <div className="login">
-           <div id="errorItem"  class="alert alert-warning d-none mb-3">
+    <div className="container-fluid hero  bk-board d-flex" style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL
+            + "/assets/pexels-ray-piedra-1565982.jpg"})`
+      }}  >
+    <div className="login">
+    <div id="errorItem"  class="alert alert-warning d-none mb-3">
          Username or password is incorrect
         </div>
-          <Form>
-              <div className="form-group text-left">
+         <Form>
+             <Header title="Login" />
+             <div className="form-group text-left">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" 
                      className="form-control" 
@@ -97,7 +103,7 @@ function LoginForm(props) {
               </div>
               <div className="form-check">
               </div>
-              <Button variant="primary" type="submit" onClick={handleSubmitClick}>
+              <Button className= "sub-btn" variant="warning" type="submit" onClick={handleSubmitClick}>
                   Submit
               </Button>
           </Form>
@@ -110,6 +116,7 @@ function LoginForm(props) {
  
           </div>
       </div>
+    </div>
   )
 }
 

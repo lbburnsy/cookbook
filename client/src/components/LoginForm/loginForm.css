@@ -1,9 +1,41 @@
-form {
-    width: 90%;
-    margin: 0 auto;
+.bk-board{
+    position: absolute;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    margin-bottom: 20px;
 }
-@media (min-width: 768px) {
-    form {
-        /* width: 40%; */
-    }
+.login {
+    width: 350px;
+    height: 450px;
+    position: relative;
+    margin: auto;
+    margin-top: 70px;
+    padding: 25px;
+    background: rgba(165, 42, 42, 0.205);
+    box-shadow: 0 0 30px 9px rgb(83, 78, 70);
+    
 }
+
+label {
+    color: white;
+    margin-left: 10px;
+}
+#email {
+    background: #e7dcdc;
+    width: 300px;
+}
+#password {
+    background: #e7dcdc;
+    width: 300px;
+}
+.sub-btn {
+    width: 300px;
+}
+.signupMessage {
+    margin-left: 0;
+    padding: 6%;
+    font-size: medium;
+    color: white;
+}
+

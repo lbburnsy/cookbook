@@ -4,6 +4,8 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import API from "../../utils/API";
+import Header from "../../components/Header/header";
+import "./signup.css";
 
 class Signup extends Component {
   constructor() {
@@ -82,11 +84,16 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
-         <div id="errorItem"  class="alert alert-warning d-none mb-3">
-          User already exists
-        </div>
+
+
+    <div className="container-fluid hero bk-board d-flex" style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL
+                + "/assets/pexels-ray-piedra-1565982.jpg"})`
+          }}  >
+      <div className="container" id="signup">
+
         <Form onSubmit={this.onSubmit}>
+        <Header title="Sign Up" />
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control
@@ -134,12 +141,13 @@ class Signup extends Component {
             </Form.Control>
           </Form.Group>
 
-          <Button variant="primary" type="submit" value="submit">
+          <Button className="submit-btn" variant="warning" type="submit" value="submit">
             Signup
           </Button>
         </Form>
        
       </div>
+    </div>
     );
   }
 }
