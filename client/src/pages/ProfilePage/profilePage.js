@@ -14,7 +14,7 @@ function ProfilePage(props) {
             <ProfileMainNav />
             </div>
             <div className="row">
-                Overview Information
+                {/* Overview Information */}
             </div>
 
         </div>
