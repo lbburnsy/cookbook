@@ -9,8 +9,8 @@ function Filter(props) {
     return (
         <div>
             <br/>
-  <Card >
-    <Card.Body>
+  <Card>
+    <Card.Body className= "back-color">
       <Form className="filterForm">
             <div className="filter">
              <h3>Filter Recipe</h3>
