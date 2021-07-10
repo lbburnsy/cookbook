@@ -16,7 +16,11 @@
     box-shadow: 0 0 30px 9px rgb(83, 78, 70);
     
 }
-
+.l-word {
+    margin-left: 35%;
+    padding-bottom: 10px;
+    color: white;
+}
 label {
     color: white;
     margin-left: 10px;

@@ -96,7 +96,9 @@ class Signup extends Component {
         </div>
 
         <Form onSubmit={this.onSubmit}>
-        <Header title="Sign Up" />
+        <div className="s-word">
+             <h2>SignUp</h2>
+           </div>   
           <Form.Group controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control

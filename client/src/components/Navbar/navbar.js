@@ -41,7 +41,7 @@ function Navbar(props){
                 <div className="row w-100">
                     <div className="col-12 col-md-1">
                         <Link to="/">
-                        <span className="navbar-brand" href="#">Logo</span>
+                        <span className="navbar-brand" href="#">Ar-Chive</span>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                         </button>

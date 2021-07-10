@@ -78,7 +78,10 @@ function LoginForm(props) {
          Username or password is incorrect
         </div>
          <Form>
-             <Header title="Login" />
+            <div className="l-word">
+             <h2>Login</h2>
+           </div>   
+             
              <div className="form-group text-left">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" 
