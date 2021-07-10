@@ -147,13 +147,13 @@ function App() {
           <Route path="/login" render= { () =><Login user={user} setUserInfo={setUserInfo}/>}/>
           <Route path="/logout" render= { () =>{setUser(initUser);  setTimeout(() => history.push('/login'), 200);;} }/>
          
-          <Route path="/profile" render= { () =><ProfilePage user={user} setUserInfo={setUserInfo}/>}/> 
+          <Route path="/profile" render= { () =><ProfilePage user={user} setUserInfo={setUserInfo} />}/> 
           <Route path="/recipesearchresults" render= { () => < RecipeSearchResults onRecipeClick={onRecipeClick} onFilterChange={onFilterChange} recipes={filteredRecipes} filter={filter} user={user} />}/>
           <Route path="/recipedetailspage" render= { () => <RecipeDetailsPage recipe={recipe} />}/>
 
 
 {/* Sidebar */}
-          <Route path='/cookbook'  render= { () =><Cookbook user={user} setUserInfo={setUserInfo}/>}/> 
+          <Route path='/cookbook'  render= { () =><Cookbook user={user} setUserInfo={setUserInfo} onRecipeClick={onRecipeClick} />}/> 
           <Route path='/addrecipe'  render= { () =><Addrecipe user={user} history={history} setUserInfo={setUserInfo}/>}/> 
           <Route path='/favorite'  render= { () =><Favorite user={user} setUserInfo={setUserInfo}/>}/> 
 

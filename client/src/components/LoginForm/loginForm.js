@@ -74,7 +74,7 @@ function LoginForm(props) {
             + "/assets/pexels-ray-piedra-1565982.jpg"})`
       }}  >
     <div className="login">
-    <div id="errorItem"  class="alert alert-warning d-none mb-3">
+    <div id="errorItem"  className="alert alert-warning d-none mb-3">
          Username or password is incorrect
         </div>
          <Form>

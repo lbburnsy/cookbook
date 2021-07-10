@@ -33,7 +33,7 @@ function Cookbook(props) {
             <div className="row">
 
            
-            <FoodCardContainer recipes={Array.from(cookbookRecipes)} itemColClass={"col-lg-3 col-md-3 col-sm-12"}></FoodCardContainer>
+            <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={Array.from(cookbookRecipes)} itemColClass={"col-lg-3 col-md-3 col-sm-12"}></FoodCardContainer>
             </div>
         </div>
 

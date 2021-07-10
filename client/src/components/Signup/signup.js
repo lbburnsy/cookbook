@@ -91,7 +91,7 @@ class Signup extends Component {
                 + "/assets/pexels-ray-piedra-1565982.jpg"})`
           }}  >
       <div className="container" id="signup">
-      <div id="errorItem"  class="alert alert-warning d-none mb-3">
+      <div id="errorItem"  className="alert alert-warning d-none mb-3">
          Email already exists!
         </div>
 
