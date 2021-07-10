@@ -53,7 +53,7 @@ function Favorite(props) {
         <ProfileMainNav></ProfileMainNav>
         </div>
         <div className="row">
-        <FoodCardContainer recipes={Array.from(favoriteRecipes)} itemColClass={"col-lg-3 col-md-3 col-sm-12"}></FoodCardContainer>
+        <FoodCardContainer onRecipeClick={props.onRecipeClick} recipes={Array.from(favoriteRecipes)} itemColClass={"col-lg-3 col-md-3 col-sm-12"}></FoodCardContainer>
            
         </div>
     </div>
