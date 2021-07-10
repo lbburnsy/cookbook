@@ -72,7 +72,7 @@ function Navbar(props){
                    
                     {profile}
                   
-                    <Link to="/recipesearchresults">
+                    {/* <Link to="/recipesearchresults">
                         <li className="nav-item">
                         <span className="nav-link active" aria-current="page" href="#">Recipe Search Results</span>
                         </li>
@@ -81,7 +81,7 @@ function Navbar(props){
                         <li className="nav-item">
                         <span className="nav-link active" aria-current="page" href="#">Recipe Details Page</span>
                         </li>
-                    </Link>
+                    </Link> */}
                 </ul>
                 </div>
                     </div>
