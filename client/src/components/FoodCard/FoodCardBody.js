@@ -12,7 +12,7 @@ function FoodCardBody(props) {
      
       <div className="card border-0" >
         <img
-          src={props.img?props.img:'/assets/breakfast.jpg' }
+          src={props.img?props.img:'/assets/pexels-karolina-grabowska-4033296.jpg' }
           className="card-img-top"
           alt={props.name}>
           </img>
