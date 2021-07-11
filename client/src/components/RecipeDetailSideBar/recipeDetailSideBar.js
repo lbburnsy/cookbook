@@ -12,7 +12,7 @@ function RecipeDetailSideBar(props) {
               <ListGroup.Item>Prep:</ListGroup.Item>
               <ListGroup.Item>Cook: {props.recipe?.cook}</ListGroup.Item>
               <ListGroup.Item>Servings: {props.recipe?.servings}</ListGroup.Item>
-              <ListGroup.Item>Date Added: </ListGroup.Item>
+              {/* <ListGroup.Item>Date Added: </ListGroup.Item> */}
             </ListGroup>
           </Card>
         </div>

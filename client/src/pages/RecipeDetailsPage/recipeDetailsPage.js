@@ -13,9 +13,9 @@ function RecipeDetailsPage(props) {
         history.push("/")
     } 
     return (
-        <div className="container mt-5">
+        <div className="container">
             <Header title={props.recipe?.name} />
-            <div className="row">
+            <div className="row mt-5">
                 <div className="col-lg-4">
                   <img src={props.recipe?.image?props.recipe?.image:'/assets/pexels-karolina-grabowska-4033296.jpg'} className="img" alt="nutty bar"></img>  
                 <RecipeDetailSideBar recipe={props.recipe}/>    

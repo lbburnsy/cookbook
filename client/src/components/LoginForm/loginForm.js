@@ -92,7 +92,7 @@ function LoginForm(props) {
                      value={state.email}
                      onChange={handleChange}
               />
-              <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailHelp" className="security-message">We'll never share your email with anyone else.</small>
               </div>
               <div className="form-group text-left">
               <label htmlFor="exampleInputPassword1">Password</label>
@@ -107,7 +107,7 @@ function LoginForm(props) {
               <div className="form-check">
               </div>
               <Button className= "sub-btn" variant="warning" type="submit" onClick={handleSubmitClick}>
-                  Submit
+                  Login
               </Button>
           </Form>
           <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
@@ -115,7 +115,7 @@ function LoginForm(props) {
           </div>
           <div className="signupMessage">
               <span>Dont have an account? </span>
-              <Link to="/signup">Signup</Link>
+              <Link className="options-message m-2" to="/signup">Signup</Link>
  
           </div>
       </div>

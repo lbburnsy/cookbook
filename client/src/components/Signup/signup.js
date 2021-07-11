@@ -117,7 +117,7 @@ class Signup extends Component {
               onChange={this.changeEmail}
               vlaue={this.state.email}
             />
-            <Form.Text className="text-muted">
+            <Form.Text className="security-message">
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
@@ -139,6 +139,7 @@ class Signup extends Component {
               onChange={this.changeAbilityLevel}
               vlaue={this.state.abilityLevel}
             >
+              <option>Choose your cooking ability</option>
               <option>Beginner</option>
               <option>Intermediate</option>
               <option>Advanced</option>
