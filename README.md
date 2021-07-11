@@ -1,6 +1,6 @@
 # Ar-Chive
 ## Description
-Ar-Chive is a mobile first React full stack application designed to serve as a digital cookbook while allowing the discovery of brand-new recipes.
+Ar-Chive is a mobile first React full stack application designed to serve as a digital cookbook while allowing the discovery of brand-new recipes. The deployed application is available through the following link: [Ar-Chive](https://infinite-citadel-91130.herokuapp.com/)
 
 ## Table of Contents
 
