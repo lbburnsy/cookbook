@@ -37,3 +37,13 @@
 .loginMessage {
     color: white;
 }
+
+.security-message{
+    color: white;
+}
+
+.options-message{
+    color: #ffc004;
+    font-weight: bold;
+}
+
